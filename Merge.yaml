@@ -1,0 +1,399 @@
+geodata-mode: true
+geox-url:
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.metadb"
+geo-auto-update: true
+geo-update-interval: 24
+
+dns:
+  enable: true
+  listen: '127.0.0.1:53'
+  enhanced-mode: 'fake-ip'
+  fake-ip-range: '198.18.0.1/16'
+  fake-ip-range6: 'fdfe:dcba:9876::1/64'
+  fake-ip-filter-mode: 'blacklist'
+  prefer-h3: false
+  respect-rules: false
+  use-hosts: true
+  use-system-hosts: true
+  ipv6: false
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+    - '*.localhost'
+    - '*.arpa'
+    - 'time.*.com'
+    - 'ntp.*.com'
+    - '+.msftconnecttest.com'
+    - '+.msftncsi.com'
+    - '+.tsinghua.edu.cn'
+  default-nameserver:
+    - system
+  nameserver:
+    - 'https://dns.alidns.com/dns-query'
+    - 'https://doh.pub/dns-query'
+  direct-nameserver-follow-policy: true
+  fallback-filter:
+    geoip: true
+    geoip-code: 'CN'
+    ipcidr:
+      - '240.0.0.0/4'
+      - '0.0.0.0/32'
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+  fallback:
+    - 'https://1.1.1.1/dns-query#🔄 故障转移'
+    - 'https://8.8.8.8/dns-query#🔄 故障转移'
+  proxy-server-nameserver:
+    - 'https://dns.alidns.com/dns-query'
+    - 'https://doh.pub/dns-query'
+  direct-nameserver:
+    - system
+  nameserver-policy:
+    +.tsinghua.edu.cn:
+      - system
+    +.anthropic.com:
+      - 'https://1.1.1.1/dns-query#🤖 AI'
+      - 'https://8.8.8.8/dns-query#🤖 AI'
+    +.claude.ai:
+      - 'https://1.1.1.1/dns-query#🤖 AI'
+      - 'https://8.8.8.8/dns-query#🤖 AI'
+
+proxy-groups:
+  - name: "🚀 节点选择"
+    type: select
+    default-selected: "⚡ 自动选择"
+    proxies:
+      - "⚡ 自动选择"
+      - "🔄 故障转移"
+      - DIRECT
+    include-all: true
+    exclude-type: direct
+    exclude-filter: &exclude '(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\s*0\.\d+|0\.\d+\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\s*[:：]?\s*0\.\d+)'
+
+  # ============================================================
+  # 业务策略组
+  # ============================================================
+
+  - name: "🤖 AI"
+    type: select
+    default-selected: "🇸🇬 新加坡"
+    proxies:
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+
+  - name: "💻 开发"
+    type: select
+    default-selected: "🇸🇬 新加坡"
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+
+  - name: "💬 社交"
+    type: select
+    default-selected: "🚀 节点选择"
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+
+  - name: "📺 视频"
+    type: select
+    default-selected: "🚀 节点选择"
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+
+  - name: "📖 论文"
+    type: select
+    default-selected: DIRECT
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+      - DIRECT
+
+  - name: "📚 学术"
+    type: select
+    default-selected: "🚀 节点选择"
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+
+  - name: "🎮 游戏"
+    type: select
+    default-selected: "🚀 节点选择"
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+      - DIRECT
+
+  - name: "🌐 Google"
+    type: select
+    default-selected: "🇸🇬 新加坡"
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+
+  - name: "🍎 Apple"
+    type: select
+    default-selected: DIRECT
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+      - DIRECT
+
+  - name: "Ⓜ️ Microsoft"
+    type: select
+    default-selected: DIRECT
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+      - DIRECT
+
+  - name: "🐟 其他"
+    type: select
+    default-selected: DIRECT
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🚀 节点选择"
+      - DIRECT
+
+  # ============================================================
+  # 地区自动组
+  # ============================================================
+
+  # ============================================================
+  # 自动组选项
+  # ============================================================
+
+  - name: "🇭🇰 香港"
+    <<: &auto
+      type: url-test
+      url: https://www.gstatic.com/generate_204
+      expected-status: 204
+      interval: 1800
+      timeout: 5000
+      tolerance: 50
+      max-failed-times: 3
+      empty-fallback: REJECT
+      lazy: true
+      include-all: true
+      exclude-type: direct
+      exclude-filter: *exclude
+    filter: '(?i)(香港|🇭🇰|\bHK\b|Hong ?Kong|HKT)'
+
+  - name: "🇨🇳 台湾"
+    <<: *auto
+    filter: '(?i)(台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\bTW\b|Taiwan|Taipei|Kaohsiung)'
+
+  - name: "🇯🇵 日本"
+    <<: *auto
+    filter: '(?i)(日本|🇯🇵|\bJP\b|Japan|Tokyo|Osaka|Saitama|Nagoya)'
+
+  - name: "🇸🇬 新加坡"
+    <<: *auto
+    filter: '(?i)(新加坡|狮城|獅城|🇸🇬|\bSG\b|Singapore)'
+
+  - name: "🇺🇸 美国"
+    <<: *auto
+    filter: '(?i)(美国|美國|🇺🇸|\bUS\b|\bUSA\b|United ?States|Los ?Angeles|San ?Jose|Seattle|Dallas|New ?York|Chicago|Ashburn)'
+
+
+  # ============================================================
+  # 全局自动选择
+  # ============================================================
+
+  - name: "⚡ 自动选择"
+    <<: *auto
+    # 仅纳入香港、台湾、日本、新加坡；额外排除美国标记，避免混合地区名称误入。
+    exclude-filter: '(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\s*0\.\d+|0\.\d+\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\s*[:：]?\s*0\.\d+)'
+    filter: '(?i)(香港|🇭🇰|\bHK\b|Hong ?Kong|HKT|台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\bTW\b|Taiwan|Taipei|Kaohsiung|日本|🇯🇵|\bJP\b|Japan|Tokyo|Osaka|Saitama|Nagoya|新加坡|狮城|獅城|🇸🇬|\bSG\b|Singapore)'
+    hidden: true
+
+  # ============================================================
+  # 故障转移
+  # ============================================================
+
+  - name: "🔄 故障转移"
+    type: fallback
+    proxies:
+      - "🇭🇰 香港"
+      - "🇨🇳 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 600
+    timeout: 5000
+    max-failed-times: 3
+    lazy: true
+    hidden: true
+
+rules:
+  # 校园网与局域网优先直连。
+  - "DOMAIN-SUFFIX,tsinghua.edu.cn,DIRECT"
+  - DOMAIN-SUFFIX,msftconnecttest.com,DIRECT
+  - DOMAIN-SUFFIX,msftncsi.com,DIRECT
+  - "GEOSITE,private,DIRECT"
+  - "GEOIP,private,DIRECT,no-resolve"
+
+  # 广告拦截。
+  - "GEOSITE,category-ads,REJECT"
+
+  # 游戏平台国内资源与下载节点直连，其余资源由游戏组控制。
+  - "GEOSITE,category-games@cn,DIRECT"
+  - "GEOSITE,steam,🎮 游戏"
+  - "GEOSITE,category-games-!cn,🎮 游戏"
+
+  # 主要 AI 专用分流：服务集合及手写例外优先于后面的平台与 AI 大类。
+  # AI 服务统一由业务组控制；Gemini / Google AI 由 Google 服务组控制。
+
+  # ChatGPT / OpenAI / Sora：专用集合先于 Microsoft，避免 Azure 资源误分流。
+  - "GEOSITE,openai,🤖 AI"
+
+  # Claude / Anthropic：网页、API、Claude Code 及内容资源。
+  - "GEOSITE,anthropic,🤖 AI"
+
+  # Perplexity。
+  - "GEOSITE,perplexity,🤖 AI"
+
+  # Grok / xAI。
+  - "DOMAIN-SUFFIX,grok.com,🤖 AI"
+  - "DOMAIN-SUFFIX,grok.x.com,🤖 AI"
+  - "DOMAIN-SUFFIX,x.ai,🤖 AI"
+
+  # Microsoft Copilot / GitHub Copilot：仅覆盖 AI 专用域名。
+  - "DOMAIN-SUFFIX,copilot.com,💻 开发"
+  - "DOMAIN-SUFFIX,copilot.microsoft.com,💻 开发"
+  - "DOMAIN-SUFFIX,copilot.cloud.microsoft,💻 开发"
+  - "DOMAIN-SUFFIX,copilot-stg.com,💻 开发"
+  - "DOMAIN-SUFFIX,githubcopilot.com,💻 开发"
+  - "DOMAIN,copilot-proxy.githubusercontent.com,💻 开发"
+  - "DOMAIN,copilot-workspace.githubnext.com,💻 开发"
+  - "DOMAIN,copilotprodattachments.blob.core.windows.net,💻 开发"
+
+  # Cursor：专用开发分流先于 AI 大类。
+  - "GEOSITE,cursor,💻 开发"
+
+  # 原有非 AI 资源规则。
+  - "DOMAIN-SUFFIX,stardock.cachefly.net,🎮 游戏"
+
+  # 科研、写作、翻译和学术资源统一由学术服务组控制。
+  - "DOMAIN-SUFFIX,elicit.com,📚 学术"
+  - "DOMAIN-SUFFIX,consensus.app,📚 学术"
+  - "DOMAIN-SUFFIX,scite.ai,📚 学术"
+  - "DOMAIN-SUFFIX,mathpix.com,📚 学术"
+  - "DOMAIN-SUFFIX,scispace.com,📚 学术"
+  - "DOMAIN-SUFFIX,typeset.io,📚 学术"
+  - "DOMAIN-SUFFIX,paperpal.com,📚 学术"
+  - "DOMAIN-SUFFIX,grammarly.com,📚 学术"
+  - "DOMAIN-SUFFIX,quillbot.com,📚 学术"
+  - "GEOSITE,wikimedia,📚 学术"
+
+  # 视频与流媒体规则优先于宽泛的 Google 规则，避免 YouTube 被提前归入 Google。
+  - "GEOSITE,disney@cn,DIRECT"
+  - "GEOSITE,primevideo@cn,DIRECT"
+  - "GEOSITE,netflix,📺 视频"
+  - "GEOSITE,disney,📺 视频"
+  - "GEOSITE,hbo,📺 视频"
+  - "GEOSITE,primevideo,📺 视频"
+  - "GEOSITE,youtube,📺 视频"
+  - "GEOSITE,tiktok,📺 视频"
+  - "GEOSITE,bahamut,📺 视频"
+  - "GEOSITE,spotify,📺 视频"
+  - "PROCESS-NAME,Antigravity.exe,🌐 Google"
+  - "GEOSITE,google,🌐 Google"
+
+  # 明确归入开发组的平台优先于后面的 Microsoft 与 AI 大类。
+  - "GEOSITE,github,💻 开发"
+  - "GEOSITE,huggingface,💻 开发"
+
+  # Apple 与 Microsoft 直连或代理
+  - "GEOSITE,onedrive,Ⓜ️ Microsoft"
+  - "GEOSITE,microsoft,Ⓜ️ Microsoft"
+  - "GEOSITE,apple,🍎 Apple"
+
+  # 其他非中国大陆 AI 服务，含 Poe、Mistral、Meta AI、OpenRouter、Midjourney。
+  - "GEOSITE,category-ai-!cn,🤖 AI"
+
+  # 开发与科研平台。
+  - "GEOSITE,sci-hub,📚 学术"
+  - "GEOSITE,z-library,📚 学术"
+  - "DOMAIN-SUFFIX,z-lib.sk,📚 学术"
+  - "PROCESS-NAME,Z-Library.exe,📚 学术"
+  - "GEOSITE,atlassian,💻 开发"
+  - "GEOSITE,sourceforge,💻 开发"
+  
+  # 国内学术资源直连
+  - "GEOSITE,category-scholar-cn,DIRECT"
+
+  # 国际学术数据库优先直连，可手动切换
+  - "GEOSITE,category-scholar-!cn,📖 论文"
+  - "GEOSITE,category-dev,💻 开发"
+
+  # 通信及社交平台；显式规则放在大类规则前，便于排查命中情况。
+  - "DOMAIN-SUFFIX,whatsapp.biz,💬 社交"
+  - "GEOIP,telegram,💬 社交,no-resolve"
+  - "GEOSITE,reddit,💬 社交"
+  - "GEOSITE,pinterest,💬 社交"
+  - "GEOSITE,snap,💬 社交"
+  - "GEOSITE,twitch,📺 视频"
+  - "GEOSITE,category-social-media-!cn,💬 社交"
+  - "GEOSITE,category-communication,💬 社交"
+
+  # 大陆域名直连
+  - GEOSITE,cn,DIRECT
+  - GEOIP,CN,DIRECT,no-resolve
+
+  # 默认仍为直连，但可在“其他流量”中手动切换出口。
+  - "MATCH,🐟 其他"
+
+profile:
+  store-selected: true
+  store-fake-ip: true
