@@ -224,7 +224,7 @@ proxy-groups:
       lazy: true
       include-all: true
       exclude-type: direct
-      exclude-filter: *exclude
+      exclude-filter: &excludeAuto '(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\s*0\.\d+|(?:^|[^\w.])(?:0\.\d+|1\.\d*[1-9]\d*|[2-9]\d*(?:\.\d+)?|\d{2,}(?:\.\d+)?)\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\s*[:：]?\s*(?:0\.\d+|1\.\d*[1-9]\d*|[2-9]\d*(?:\.\d+)?|\d{2,}(?:\.\d+)?))'
     filter: '(?i)(香港|🇭🇰|\bHK\b|Hong ?Kong|HKT)'
 
   - name: "🇨🇳 台湾"
@@ -251,7 +251,7 @@ proxy-groups:
   - name: "⚡ 自动选择"
     <<: *auto
     # 仅纳入香港、台湾、日本、新加坡；额外排除美国标记，避免混合地区名称误入。
-    exclude-filter: '(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\s*0\.\d+|0\.\d+\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\s*[:：]?\s*0\.\d+)'
+    exclude-filter: *excludeAuto
     filter: '(?i)(香港|🇭🇰|\bHK\b|Hong ?Kong|HKT|台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\bTW\b|Taiwan|Taipei|Kaohsiung|日本|🇯🇵|\bJP\b|Japan|Tokyo|Osaka|Saitama|Nagoya|新加坡|狮城|獅城|🇸🇬|\bSG\b|Singapore)'
     hidden: true
 
