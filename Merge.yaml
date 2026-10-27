@@ -1,11 +1,12 @@
 geodata-mode: true
+# 依赖 MetaCubeX 完整规则库；下载地址与 Mihomo v1.19.32 内核默认值一致。
 geox-url:
-  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
   geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
-  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.metadb"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
+  asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
 geo-auto-update: true
 geo-update-interval: 24
-
 ntp:
   enable: false
 sniffer:
@@ -32,6 +33,7 @@ dns:
     - '+.msftconnecttest.com'
     - '+.msftncsi.com'
     - '+.tsinghua.edu.cn'
+    - '+.qq.com'
   default-nameserver:
     - system
   nameserver:
@@ -77,14 +79,11 @@ proxy-groups:
     proxies:
       - "⚡ 自动选择"
       - "🔄 故障转移"
-      - DIRECT
     include-all: true
     exclude-type: direct
-    exclude-filter: &exclude '(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\s*0\.\d+|(?<![\d.])0\.\d+\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\s*[:：]?\s*0\.\d+)'
+    exclude-filter: &exclude '(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\s*0\.\d+|0\.\d+\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\s*[:：]?\s*0\.\d+)'
 
-  # ============================================================
   # 业务策略组
-  # ============================================================
 
   - name: "🤖 AI"
     type: select
@@ -211,13 +210,7 @@ proxy-groups:
       - "🚀 节点选择"
       - DIRECT
 
-  # ============================================================
-  # 地区自动组
-  # ============================================================
-
-  # ============================================================
-  # 自动组选项
-  # ============================================================
+  # 地区自动组（共用自动组选项）
 
   - name: "🇭🇰 香港"
     <<: &auto
@@ -251,10 +244,7 @@ proxy-groups:
     <<: *auto
     filter: '(?i)(美国|美國|🇺🇸|\bUS\b|\bUSA\b|United ?States|Los ?Angeles|San ?Jose|Seattle|Dallas|New ?York|Chicago|Ashburn)'
 
-
-  # ============================================================
   # 全局自动选择
-  # ============================================================
 
   - name: "⚡ 自动选择"
     <<: *auto
@@ -262,9 +252,7 @@ proxy-groups:
     filter: '(?i)(香港|🇭🇰|\bHK\b|Hong ?Kong|HKT|台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\bTW\b|Taiwan|Taipei|Kaohsiung|日本|🇯🇵|\bJP\b|Japan|Tokyo|Osaka|Saitama|Nagoya|新加坡|狮城|獅城|🇸🇬|\bSG\b|Singapore)'
     hidden: true
 
-  # ============================================================
   # 故障转移
-  # ============================================================
 
   - name: "🔄 故障转移"
     type: fallback
@@ -375,7 +363,7 @@ rules:
   - "DOMAIN-SUFFIX,z-lib.sk,📚 学术"
   - "GEOSITE,atlassian,💻 开发"
   - "GEOSITE,sourceforge,💻 开发"
-  
+
   # 国内学术资源直连
   - "GEOSITE,category-scholar-cn,DIRECT"
 
