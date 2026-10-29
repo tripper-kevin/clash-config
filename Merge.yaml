@@ -11,6 +11,16 @@ ntp:
   enable: false
 sniffer:
   enable: false
+# 反广告规则，采用anti-ad库，每24h更新
+rule-providers:
+  anti-ad:
+    type: http
+    behavior: domain
+    format: yaml
+    url: "https://anti-ad.net/clash.yaml"
+    path: ./ruleset/anti-ad.yaml
+    interval: 86400
+#DNS规则，适配清华校园网
 dns:
   enable: true
   listen: '127.0.0.1:53'
@@ -280,6 +290,7 @@ rules:
 
   # 广告拦截。
   - "GEOSITE,category-ads,REJECT"
+  - RULE-SET,anti-ad,REJECT
 
   # 游戏平台国内资源与下载节点直连，其余资源由游戏组控制。
   - "GEOSITE,category-games@cn,DIRECT"
