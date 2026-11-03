@@ -26,7 +26,7 @@ dns:
   listen: '127.0.0.1:53'
   enhanced-mode: 'fake-ip'
   fake-ip-range: '198.18.0.1/16'
-  fake-ip-range6: 'fdfe:dcba:9876::1/64'
+  fake-ip-range6: '2001:2::0/64'
   fake-ip-filter-mode: 'blacklist'
   prefer-h3: false
   respect-rules: false
@@ -227,7 +227,7 @@ proxy-groups:
       type: url-test
       url: https://www.gstatic.com/generate_204
       expected-status: 204
-      interval: 1800
+      interval: 3600
       timeout: 5000
       tolerance: 50
       max-failed-times: 3
