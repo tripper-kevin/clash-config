@@ -1,0 +1,456 @@
+{
+  "geodata-mode": true,
+  "geox-url": {
+    "geoip": "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat",
+    "geosite": "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat",
+    "mmdb": "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb",
+    "asn": "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
+  },
+  "geo-auto-update": true,
+  "geo-update-interval": 24,
+  "ntp": {
+    "enable": false
+  },
+  "sniffer": {
+    "enable": false
+  },
+  "rule-providers": {
+    "anti-ad": {
+      "type": "http",
+      "behavior": "domain",
+      "format": "yaml",
+      "url": "https://anti-ad.net/clash.yaml",
+      "path": "./ruleset/anti-ad.yaml",
+      "interval": 86400
+    }
+  },
+  "dns": {
+    "enable": true,
+    "listen": "127.0.0.1:53",
+    "enhanced-mode": "fake-ip",
+    "fake-ip-range": "198.18.0.1/16",
+    "fake-ip-range6": "2001:2::0/64",
+    "fake-ip-filter-mode": "blacklist",
+    "prefer-h3": false,
+    "respect-rules": false,
+    "use-hosts": true,
+    "use-system-hosts": true,
+    "ipv6": true,
+    "fake-ip-filter": [
+      "*.lan",
+      "*.local",
+      "*.localhost",
+      "*.arpa",
+      "time.*.com",
+      "ntp.*.com",
+      "+.msftconnecttest.com",
+      "+.msftncsi.com",
+      "+.tsinghua.edu.cn",
+      "+.qq.com"
+    ],
+    "default-nameserver": [
+      "system"
+    ],
+    "nameserver": [
+      "https://dns.alidns.com/dns-query",
+      "https://doh.pub/dns-query"
+    ],
+    "direct-nameserver-follow-policy": true,
+    "fallback-filter": {
+      "geoip": true,
+      "geoip-code": "CN",
+      "ipcidr": [
+        "240.0.0.0/4",
+        "0.0.0.0/32",
+        "198.18.0.0/15",
+        "::/128",
+        "2001:db8::/32"
+      ],
+      "domain": [
+        "+.google.com",
+        "+.facebook.com",
+        "+.youtube.com"
+      ]
+    },
+    "fallback": [
+      "https://1.1.1.1/dns-query#🔄 故障转移",
+      "https://8.8.8.8/dns-query#🔄 故障转移"
+    ],
+    "proxy-server-nameserver-policy": {},
+    "proxy-server-nameserver": [
+      "https://dns.alidns.com/dns-query",
+      "https://doh.pub/dns-query"
+    ],
+    "direct-nameserver": [
+      "system"
+    ],
+    "nameserver-policy": {
+      "+.tsinghua.edu.cn": [
+        "system"
+      ],
+      "+.anthropic.com": [
+        "https://1.1.1.1/dns-query#🤖 AI",
+        "https://8.8.8.8/dns-query#🤖 AI"
+      ],
+      "+.claude.ai": [
+        "https://1.1.1.1/dns-query#🤖 AI",
+        "https://8.8.8.8/dns-query#🤖 AI"
+      ]
+    }
+  },
+  "proxy-groups": [
+    {
+      "name": "🚀 节点选择",
+      "type": "select",
+      "default-selected": "⚡ 自动选择",
+      "proxies": [
+        "⚡ 自动选择",
+        "🔄 故障转移"
+      ],
+      "include-all": true,
+      "exclude-type": "direct",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)"
+    },
+    {
+      "name": "🤖 AI",
+      "type": "select",
+      "default-selected": "🇸🇬 新加坡",
+      "proxies": [
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择"
+      ]
+    },
+    {
+      "name": "💻 开发",
+      "type": "select",
+      "default-selected": "🇸🇬 新加坡",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择"
+      ]
+    },
+    {
+      "name": "💬 社交",
+      "type": "select",
+      "default-selected": "🚀 节点选择",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择"
+      ]
+    },
+    {
+      "name": "📺 视频",
+      "type": "select",
+      "default-selected": "🚀 节点选择",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择"
+      ]
+    },
+    {
+      "name": "📖 论文",
+      "type": "select",
+      "default-selected": "DIRECT",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择",
+        "DIRECT"
+      ]
+    },
+    {
+      "name": "📚 学术",
+      "type": "select",
+      "default-selected": "🚀 节点选择",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择"
+      ]
+    },
+    {
+      "name": "🎮 游戏",
+      "type": "select",
+      "default-selected": "🚀 节点选择",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择",
+        "DIRECT"
+      ]
+    },
+    {
+      "name": "🌐 Google",
+      "type": "select",
+      "default-selected": "🇸🇬 新加坡",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择"
+      ]
+    },
+    {
+      "name": "🍎 Apple",
+      "type": "select",
+      "default-selected": "DIRECT",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择",
+        "DIRECT"
+      ]
+    },
+    {
+      "name": "Ⓜ️ Microsoft",
+      "type": "select",
+      "default-selected": "DIRECT",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择",
+        "DIRECT"
+      ]
+    },
+    {
+      "name": "🐟 其他",
+      "type": "select",
+      "default-selected": "DIRECT",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国",
+        "🚀 节点选择",
+        "DIRECT"
+      ]
+    },
+    {
+      "type": "url-test",
+      "url": "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      "interval": 3600,
+      "timeout": 5000,
+      "tolerance": 50,
+      "max-failed-times": 3,
+      "empty-fallback": "REJECT",
+      "lazy": true,
+      "include-all": true,
+      "exclude-type": "direct",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "name": "🇭🇰 香港",
+      "filter": "(?i)(香港|🇭🇰|\\bHK\\b|Hong ?Kong|HKT)"
+    },
+    {
+      "type": "url-test",
+      "url": "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      "interval": 3600,
+      "timeout": 5000,
+      "tolerance": 50,
+      "max-failed-times": 3,
+      "empty-fallback": "REJECT",
+      "lazy": true,
+      "include-all": true,
+      "exclude-type": "direct",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "name": "🇨🇳 台湾",
+      "filter": "(?i)(台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\\bTW\\b|Taiwan|Taipei|Kaohsiung)"
+    },
+    {
+      "type": "url-test",
+      "url": "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      "interval": 3600,
+      "timeout": 5000,
+      "tolerance": 50,
+      "max-failed-times": 3,
+      "empty-fallback": "REJECT",
+      "lazy": true,
+      "include-all": true,
+      "exclude-type": "direct",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "name": "🇯🇵 日本",
+      "filter": "(?i)(日本|🇯🇵|\\bJP\\b|Japan|Tokyo|Osaka|Saitama|Nagoya)"
+    },
+    {
+      "type": "url-test",
+      "url": "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      "interval": 3600,
+      "timeout": 5000,
+      "tolerance": 50,
+      "max-failed-times": 3,
+      "empty-fallback": "REJECT",
+      "lazy": true,
+      "include-all": true,
+      "exclude-type": "direct",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "name": "🇸🇬 新加坡",
+      "filter": "(?i)(新加坡|狮城|獅城|🇸🇬|\\bSG\\b|Singapore)"
+    },
+    {
+      "type": "url-test",
+      "url": "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      "interval": 3600,
+      "timeout": 5000,
+      "tolerance": 50,
+      "max-failed-times": 3,
+      "empty-fallback": "REJECT",
+      "lazy": true,
+      "include-all": true,
+      "exclude-type": "direct",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "name": "🇺🇸 美国",
+      "filter": "(?i)(美国|美國|🇺🇸|\\bUS\\b|\\bUSA\\b|United ?States|Los ?Angeles|San ?Jose|Seattle|Dallas|New ?York|Chicago|Ashburn)"
+    },
+    {
+      "type": "url-test",
+      "url": "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      "interval": 3600,
+      "timeout": 5000,
+      "tolerance": 50,
+      "max-failed-times": 3,
+      "empty-fallback": "REJECT",
+      "lazy": true,
+      "include-all": true,
+      "exclude-type": "direct",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "name": "⚡ 自动选择",
+      "filter": "(?i)(香港|🇭🇰|\\bHK\\b|Hong ?Kong|HKT|台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\\bTW\\b|Taiwan|Taipei|Kaohsiung|日本|🇯🇵|\\bJP\\b|Japan|Tokyo|Osaka|Saitama|Nagoya|新加坡|狮城|獅城|🇸🇬|\\bSG\\b|Singapore)",
+      "hidden": true
+    },
+    {
+      "name": "🔄 故障转移",
+      "type": "fallback",
+      "proxies": [
+        "🇭🇰 香港",
+        "🇨🇳 台湾",
+        "🇯🇵 日本",
+        "🇸🇬 新加坡",
+        "🇺🇸 美国"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      "interval": 600,
+      "timeout": 5000,
+      "max-failed-times": 3,
+      "lazy": true,
+      "hidden": true
+    }
+  ],
+  "rules": [
+    "DOMAIN-SUFFIX,tsinghua.edu.cn,DIRECT",
+    "DOMAIN-SUFFIX,msftconnecttest.com,DIRECT",
+    "DOMAIN-SUFFIX,msftncsi.com,DIRECT",
+    "GEOSITE,private,DIRECT",
+    "GEOIP,private,DIRECT,no-resolve",
+    "GEOSITE,category-ads,REJECT",
+    "RULE-SET,anti-ad,REJECT",
+    "GEOSITE,category-games@cn,DIRECT",
+    "GEOSITE,steam,🎮 游戏",
+    "GEOSITE,category-games-!cn,🎮 游戏",
+    "GEOSITE,openai,🤖 AI",
+    "GEOSITE,anthropic,🤖 AI",
+    "GEOSITE,perplexity,🤖 AI",
+    "DOMAIN-SUFFIX,grok.com,🤖 AI",
+    "DOMAIN-SUFFIX,grok.x.com,🤖 AI",
+    "DOMAIN-SUFFIX,x.ai,🤖 AI",
+    "DOMAIN-SUFFIX,copilot.com,💻 开发",
+    "DOMAIN-SUFFIX,copilot.microsoft.com,💻 开发",
+    "DOMAIN-SUFFIX,copilot.cloud.microsoft,💻 开发",
+    "DOMAIN-SUFFIX,copilot-stg.com,💻 开发",
+    "DOMAIN-SUFFIX,githubcopilot.com,💻 开发",
+    "DOMAIN,copilot-proxy.githubusercontent.com,💻 开发",
+    "DOMAIN,copilot-workspace.githubnext.com,💻 开发",
+    "DOMAIN,copilotprodattachments.blob.core.windows.net,💻 开发",
+    "GEOSITE,cursor,💻 开发",
+    "DOMAIN-SUFFIX,stardock.cachefly.net,🎮 游戏",
+    "DOMAIN-SUFFIX,elicit.com,📚 学术",
+    "DOMAIN-SUFFIX,consensus.app,📚 学术",
+    "DOMAIN-SUFFIX,scite.ai,📚 学术",
+    "DOMAIN-SUFFIX,mathpix.com,📚 学术",
+    "DOMAIN-SUFFIX,scispace.com,📚 学术",
+    "DOMAIN-SUFFIX,typeset.io,📚 学术",
+    "DOMAIN-SUFFIX,paperpal.com,📚 学术",
+    "DOMAIN-SUFFIX,grammarly.com,📚 学术",
+    "DOMAIN-SUFFIX,quillbot.com,📚 学术",
+    "GEOSITE,wikimedia,📚 学术",
+    "GEOSITE,disney@cn,DIRECT",
+    "GEOSITE,primevideo@cn,DIRECT",
+    "GEOSITE,netflix,📺 视频",
+    "GEOSITE,disney,📺 视频",
+    "GEOSITE,hbo,📺 视频",
+    "GEOSITE,primevideo,📺 视频",
+    "GEOSITE,youtube,📺 视频",
+    "GEOSITE,tiktok,📺 视频",
+    "GEOSITE,bahamut,📺 视频",
+    "GEOSITE,spotify,📺 视频",
+    "PROCESS-NAME,Antigravity.exe,🌐 Google",
+    "GEOSITE,google,🌐 Google",
+    "GEOSITE,github,💻 开发",
+    "GEOSITE,huggingface,💻 开发",
+    "GEOSITE,onedrive,Ⓜ️ Microsoft",
+    "GEOSITE,microsoft,Ⓜ️ Microsoft",
+    "GEOSITE,apple,🍎 Apple",
+    "GEOSITE,category-ai-!cn,🤖 AI",
+    "GEOSITE,sci-hub,📚 学术",
+    "GEOSITE,z-library,📚 学术",
+    "DOMAIN-SUFFIX,z-lib.sk,📚 学术",
+    "GEOSITE,atlassian,💻 开发",
+    "GEOSITE,sourceforge,💻 开发",
+    "GEOSITE,category-scholar-cn,DIRECT",
+    "GEOSITE,category-scholar-!cn,📖 论文",
+    "GEOSITE,category-dev,💻 开发",
+    "DOMAIN-SUFFIX,whatsapp.biz,💬 社交",
+    "GEOIP,telegram,💬 社交,no-resolve",
+    "GEOSITE,reddit,💬 社交",
+    "GEOSITE,pinterest,💬 社交",
+    "GEOSITE,snap,💬 社交",
+    "GEOSITE,twitch,📺 视频",
+    "GEOSITE,category-social-media-!cn,💬 社交",
+    "GEOSITE,category-communication,💬 社交",
+    "GEOSITE,cn,DIRECT",
+    "GEOIP,CN,DIRECT,no-resolve",
+    "MATCH,🐟 其他"
+  ],
+  "profile": {
+    "store-selected": true,
+    "store-fake-ip": true
+  }
+}

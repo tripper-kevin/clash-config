@@ -1,0 +1,378 @@
+{
+  "private": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "steam": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Steam/Steam.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "openai": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "anthropic": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Anthropic/Anthropic.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "wikimedia": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Wikimedia/Wikimedia.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "netflix": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Netflix/Netflix.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "disney": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Disney/Disney.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "hbo": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/HBO/HBO.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "primevideo": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/PrimeVideo/PrimeVideo.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "youtube": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "tiktok": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "bahamut": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Bahamut/Bahamut.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "spotify": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "google": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "github": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "onedrive": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OneDrive/OneDrive.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "microsoft": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "apple": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "atlassian": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Atlassian/Atlassian.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "sourceforge": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SourceForge/SourceForge.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "reddit": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Reddit/Reddit.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "pinterest": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Pinterest/Pinterest.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "snap": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Snap/Snap.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "twitch": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "cn": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMaxNoIP/ChinaMaxNoIP.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "category-scholar-!cn": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalScholar/GlobalScholar.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "category-ads": {
+    "urls": [
+      "https://anti-ad.net/surge.txt"
+    ],
+    "rules": [],
+    "note": "广告统一使用 anti-ad；重复引用自动合并。"
+  },
+  "category-games@cn": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SteamCN/SteamCN.list"
+    ],
+    "rules": [],
+    "note": "国内游戏资源以 SteamCN 为主要直连集合；其余国内流量可由末尾中国规则处理。"
+  },
+  "category-games-!cn": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Game/Game.list"
+    ],
+    "rules": [],
+    "note": "通用游戏集合，按游戏用途路由；包括部分 Discord 域名。"
+  },
+  "category-ai-!cn": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Anthropic/Anthropic.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Claude/Claude.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Gemini/Gemini.list"
+    ],
+    "rules": [
+      "DOMAIN-SUFFIX,perplexity.ai",
+      "DOMAIN-SUFFIX,perplexity.com",
+      "DOMAIN-SUFFIX,pplx.ai",
+      "DOMAIN-SUFFIX,poe.com",
+      "DOMAIN-SUFFIX,mistral.ai",
+      "DOMAIN-SUFFIX,meta.ai",
+      "DOMAIN-SUFFIX,grok.com",
+      "DOMAIN-SUFFIX,x.ai"
+    ],
+    "note": "海外 AI 用常见服务集合加主要域名补充。"
+  },
+  "category-dev": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Developer/Developer.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitLab/GitLab.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Docker/Docker.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Npmjs/Npmjs.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Python/Python.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Jetbrains/Jetbrains.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Stackexchange/Stackexchange.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SourceForge/SourceForge.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Atlassian/Atlassian.list"
+    ],
+    "rules": [],
+    "note": "开发工具、代码托管、包管理和开发社区组合。"
+  },
+  "category-scholar-cn": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/CNKI/CNKI.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Wanfang/Wanfang.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/CAS/CAS.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ShiJiChaoXing/ShiJiChaoXing.list"
+    ],
+    "rules": [],
+    "note": "国内学术采用知网、万方、中科院、超星组合。"
+  },
+  "category-social-media-!cn": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitter/Twitter.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Facebook/Facebook.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Instagram/Instagram.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Reddit/Reddit.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Pinterest/Pinterest.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Snap/Snap.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Threads/Threads.list"
+    ],
+    "rules": [],
+    "note": "常见海外社交平台组合。"
+  },
+  "category-communication": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Whatsapp/Whatsapp.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Line/Line.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Discord/Discord.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Slack/Slack.list",
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Teams/Teams.list"
+    ],
+    "rules": [
+      "DOMAIN-SUFFIX,signal.org",
+      "DOMAIN-SUFFIX,signal.art"
+    ],
+    "note": "常见海外通信服务组合。"
+  },
+  "perplexity": {
+    "urls": [],
+    "rules": [
+      "DOMAIN-SUFFIX,perplexity.ai",
+      "DOMAIN-SUFFIX,perplexity.com",
+      "DOMAIN-SUFFIX,pplx.ai",
+      "DOMAIN,ppl-ai-file-upload.s3.amazonaws.com",
+      "DOMAIN,pplx-res.cloudinary.com"
+    ],
+    "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+  },
+  "cursor": {
+    "urls": [],
+    "rules": [
+      "DOMAIN-SUFFIX,cursor-cdn.com",
+      "DOMAIN-SUFFIX,cursor.com",
+      "DOMAIN-SUFFIX,cursor.sh",
+      "DOMAIN-SUFFIX,cursorapi.com",
+      "DOMAIN-SUFFIX,cursorvm.com"
+    ],
+    "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+  },
+  "huggingface": {
+    "urls": [],
+    "rules": [
+      "DOMAIN-SUFFIX,hf.co",
+      "DOMAIN-SUFFIX,hf.space",
+      "DOMAIN-SUFFIX,huggingface.co"
+    ],
+    "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+  },
+  "sci-hub": {
+    "urls": [],
+    "rules": [
+      "DOMAIN-SUFFIX,sci-hub.se",
+      "DOMAIN-SUFFIX,sci-hub.ee",
+      "DOMAIN-SUFFIX,sci-hub.st",
+      "DOMAIN-SUFFIX,sci-hub.it.nf",
+      "DOMAIN-SUFFIX,sci-hub.mksa.top",
+      "DOMAIN-SUFFIX,sci.hubg.org"
+    ],
+    "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+  },
+  "z-library": {
+    "urls": [],
+    "rules": [
+      "DOMAIN-SUFFIX,z-library.sk",
+      "DOMAIN-SUFFIX,z-library.se",
+      "DOMAIN-SUFFIX,z-lib.fm",
+      "DOMAIN-SUFFIX,z-lib.gd",
+      "DOMAIN-SUFFIX,z-lib.gl",
+      "DOMAIN-SUFFIX,z-lib.org",
+      "DOMAIN-SUFFIX,zlib.life",
+      "DOMAIN-SUFFIX,zlibcdn.com",
+      "DOMAIN-SUFFIX,zlibcdn2.com",
+      "DOMAIN-SUFFIX,singlelogin.app",
+      "DOMAIN-SUFFIX,singlelogin.me",
+      "DOMAIN-SUFFIX,singlelogin.re",
+      "DOMAIN-SUFFIX,singlelogin.site",
+      "DOMAIN-SUFFIX,1lib.domains",
+      "DOMAIN-SUFFIX,1lib.sk",
+      "DOMAIN-SUFFIX,1lib.to",
+      "DOMAIN-SUFFIX,1lib.cloud",
+      "DOMAIN-SUFFIX,2lib.org",
+      "DOMAIN-SUFFIX,3lib.net",
+      "DOMAIN-SUFFIX,booksc.org",
+      "DOMAIN-SUFFIX,booksc.xyz",
+      "DOMAIN-SUFFIX,b-ok.org"
+    ],
+    "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+  },
+  "disney@cn": {
+    "urls": [],
+    "rules": [
+      "DOMAIN-SUFFIX,shanghaidisneyresort.com"
+    ],
+    "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+  },
+  "primevideo@cn": {
+    "urls": [],
+    "rules": [
+      "DOMAIN-SUFFIX,amazonprimevideo.cn",
+      "DOMAIN-SUFFIX,amazonprimevideo.com.cn"
+    ],
+    "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+  },
+  "geoip:private": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list"
+    ],
+    "rules": [],
+    "note": "按服务用途替换为小火箭兼容规则。"
+  },
+  "geoip:telegram": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
+    ],
+    "rules": [],
+    "note": "用 Telegram 完整规则替代 IP 分类，统一交给社交分组。"
+  }
+}

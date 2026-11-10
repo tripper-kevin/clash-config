@@ -1,0 +1,818 @@
+{
+  "source_sha256": "5ca4e080ac3dca2abf4996e96574e96b511287fa8dc3d76e43734bfa1ce1e435",
+  "skipped_rules": [
+    {
+      "rule": "PROCESS-NAME,Antigravity.exe,🌐 Google",
+      "reason": "Windows process rule does not apply to iPhone"
+    }
+  ],
+  "group_differences": [
+    {
+      "group": "🚀 节点选择",
+      "not_translated": {
+        "exclude-type": "direct"
+      }
+    },
+    {
+      "group": "🇭🇰 香港",
+      "not_translated": {
+        "lazy": true,
+        "max-failed-times": 3,
+        "expected-status": 204,
+        "empty-fallback": "REJECT",
+        "exclude-type": "direct"
+      }
+    },
+    {
+      "group": "🇨🇳 台湾",
+      "not_translated": {
+        "lazy": true,
+        "max-failed-times": 3,
+        "expected-status": 204,
+        "empty-fallback": "REJECT",
+        "exclude-type": "direct"
+      }
+    },
+    {
+      "group": "🇯🇵 日本",
+      "not_translated": {
+        "lazy": true,
+        "max-failed-times": 3,
+        "expected-status": 204,
+        "empty-fallback": "REJECT",
+        "exclude-type": "direct"
+      }
+    },
+    {
+      "group": "🇸🇬 新加坡",
+      "not_translated": {
+        "lazy": true,
+        "max-failed-times": 3,
+        "expected-status": 204,
+        "empty-fallback": "REJECT",
+        "exclude-type": "direct"
+      }
+    },
+    {
+      "group": "🇺🇸 美国",
+      "not_translated": {
+        "lazy": true,
+        "max-failed-times": 3,
+        "expected-status": 204,
+        "empty-fallback": "REJECT",
+        "exclude-type": "direct"
+      }
+    },
+    {
+      "group": "⚡ 自动选择",
+      "not_translated": {
+        "lazy": true,
+        "max-failed-times": 3,
+        "expected-status": 204,
+        "empty-fallback": "REJECT",
+        "exclude-type": "direct"
+      }
+    },
+    {
+      "group": "🔄 故障转移",
+      "not_translated": {
+        "lazy": true,
+        "max-failed-times": 3,
+        "expected-status": 204
+      }
+    }
+  ],
+  "rule_replacements": [
+    {
+      "category": "private",
+      "policy": "DIRECT",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "geoip:private",
+      "policy": "DIRECT",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "category-ads",
+      "policy": "REJECT",
+      "urls": [
+        "https://anti-ad.net/surge.txt"
+      ],
+      "rules": [],
+      "note": "广告统一使用 anti-ad；重复引用自动合并。"
+    },
+    {
+      "category": "category-games@cn",
+      "policy": "DIRECT",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SteamCN/SteamCN.list"
+      ],
+      "rules": [],
+      "note": "国内游戏资源以 SteamCN 为主要直连集合；其余国内流量可由末尾中国规则处理。"
+    },
+    {
+      "category": "steam",
+      "policy": "🎮 游戏",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Steam/Steam.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "category-games-!cn",
+      "policy": "🎮 游戏",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Game/Game.list"
+      ],
+      "rules": [],
+      "note": "通用游戏集合，按游戏用途路由；包括部分 Discord 域名。"
+    },
+    {
+      "category": "openai",
+      "policy": "🤖 AI",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "anthropic",
+      "policy": "🤖 AI",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Anthropic/Anthropic.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "perplexity",
+      "policy": "🤖 AI",
+      "urls": [],
+      "rules": [
+        "DOMAIN-SUFFIX,perplexity.ai",
+        "DOMAIN-SUFFIX,perplexity.com",
+        "DOMAIN-SUFFIX,pplx.ai",
+        "DOMAIN,ppl-ai-file-upload.s3.amazonaws.com",
+        "DOMAIN,pplx-res.cloudinary.com"
+      ],
+      "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+    },
+    {
+      "category": "cursor",
+      "policy": "💻 开发",
+      "urls": [],
+      "rules": [
+        "DOMAIN-SUFFIX,cursor-cdn.com",
+        "DOMAIN-SUFFIX,cursor.com",
+        "DOMAIN-SUFFIX,cursor.sh",
+        "DOMAIN-SUFFIX,cursorapi.com",
+        "DOMAIN-SUFFIX,cursorvm.com"
+      ],
+      "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+    },
+    {
+      "category": "wikimedia",
+      "policy": "📚 学术",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Wikimedia/Wikimedia.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "disney@cn",
+      "policy": "DIRECT",
+      "urls": [],
+      "rules": [
+        "DOMAIN-SUFFIX,shanghaidisneyresort.com"
+      ],
+      "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+    },
+    {
+      "category": "primevideo@cn",
+      "policy": "DIRECT",
+      "urls": [],
+      "rules": [
+        "DOMAIN-SUFFIX,amazonprimevideo.cn",
+        "DOMAIN-SUFFIX,amazonprimevideo.com.cn"
+      ],
+      "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+    },
+    {
+      "category": "netflix",
+      "policy": "📺 视频",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Netflix/Netflix.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "disney",
+      "policy": "📺 视频",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Disney/Disney.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "hbo",
+      "policy": "📺 视频",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/HBO/HBO.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "primevideo",
+      "policy": "📺 视频",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/PrimeVideo/PrimeVideo.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "youtube",
+      "policy": "📺 视频",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "tiktok",
+      "policy": "📺 视频",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "bahamut",
+      "policy": "📺 视频",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Bahamut/Bahamut.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "spotify",
+      "policy": "📺 视频",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "google",
+      "policy": "🌐 Google",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "github",
+      "policy": "💻 开发",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "huggingface",
+      "policy": "💻 开发",
+      "urls": [],
+      "rules": [
+        "DOMAIN-SUFFIX,hf.co",
+        "DOMAIN-SUFFIX,hf.space",
+        "DOMAIN-SUFFIX,huggingface.co"
+      ],
+      "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+    },
+    {
+      "category": "onedrive",
+      "policy": "Ⓜ️ Microsoft",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OneDrive/OneDrive.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "microsoft",
+      "policy": "Ⓜ️ Microsoft",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "apple",
+      "policy": "🍎 Apple",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "category-ai-!cn",
+      "policy": "🤖 AI",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Anthropic/Anthropic.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Claude/Claude.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Gemini/Gemini.list"
+      ],
+      "rules": [
+        "DOMAIN-SUFFIX,perplexity.ai",
+        "DOMAIN-SUFFIX,perplexity.com",
+        "DOMAIN-SUFFIX,pplx.ai",
+        "DOMAIN-SUFFIX,poe.com",
+        "DOMAIN-SUFFIX,mistral.ai",
+        "DOMAIN-SUFFIX,meta.ai",
+        "DOMAIN-SUFFIX,grok.com",
+        "DOMAIN-SUFFIX,x.ai"
+      ],
+      "note": "海外 AI 用常见服务集合加主要域名补充。"
+    },
+    {
+      "category": "sci-hub",
+      "policy": "📚 学术",
+      "urls": [],
+      "rules": [
+        "DOMAIN-SUFFIX,sci-hub.se",
+        "DOMAIN-SUFFIX,sci-hub.ee",
+        "DOMAIN-SUFFIX,sci-hub.st",
+        "DOMAIN-SUFFIX,sci-hub.it.nf",
+        "DOMAIN-SUFFIX,sci-hub.mksa.top",
+        "DOMAIN-SUFFIX,sci.hubg.org"
+      ],
+      "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+    },
+    {
+      "category": "z-library",
+      "policy": "📚 学术",
+      "urls": [],
+      "rules": [
+        "DOMAIN-SUFFIX,z-library.sk",
+        "DOMAIN-SUFFIX,z-library.se",
+        "DOMAIN-SUFFIX,z-lib.fm",
+        "DOMAIN-SUFFIX,z-lib.gd",
+        "DOMAIN-SUFFIX,z-lib.gl",
+        "DOMAIN-SUFFIX,z-lib.org",
+        "DOMAIN-SUFFIX,zlib.life",
+        "DOMAIN-SUFFIX,zlibcdn.com",
+        "DOMAIN-SUFFIX,zlibcdn2.com",
+        "DOMAIN-SUFFIX,singlelogin.app",
+        "DOMAIN-SUFFIX,singlelogin.me",
+        "DOMAIN-SUFFIX,singlelogin.re",
+        "DOMAIN-SUFFIX,singlelogin.site",
+        "DOMAIN-SUFFIX,1lib.domains",
+        "DOMAIN-SUFFIX,1lib.sk",
+        "DOMAIN-SUFFIX,1lib.to",
+        "DOMAIN-SUFFIX,1lib.cloud",
+        "DOMAIN-SUFFIX,2lib.org",
+        "DOMAIN-SUFFIX,3lib.net",
+        "DOMAIN-SUFFIX,booksc.org",
+        "DOMAIN-SUFFIX,booksc.xyz",
+        "DOMAIN-SUFFIX,b-ok.org"
+      ],
+      "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+    },
+    {
+      "category": "atlassian",
+      "policy": "💻 开发",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Atlassian/Atlassian.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "sourceforge",
+      "policy": "💻 开发",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SourceForge/SourceForge.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "category-scholar-cn",
+      "policy": "DIRECT",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/CNKI/CNKI.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Wanfang/Wanfang.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/CAS/CAS.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ShiJiChaoXing/ShiJiChaoXing.list"
+      ],
+      "rules": [],
+      "note": "国内学术采用知网、万方、中科院、超星组合。"
+    },
+    {
+      "category": "category-scholar-!cn",
+      "policy": "📖 论文",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalScholar/GlobalScholar.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "category-dev",
+      "policy": "💻 开发",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Developer/Developer.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitLab/GitLab.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Docker/Docker.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Npmjs/Npmjs.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Python/Python.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Jetbrains/Jetbrains.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Stackexchange/Stackexchange.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SourceForge/SourceForge.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Atlassian/Atlassian.list"
+      ],
+      "rules": [],
+      "note": "开发工具、代码托管、包管理和开发社区组合。"
+    },
+    {
+      "category": "geoip:telegram",
+      "policy": "💬 社交",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
+      ],
+      "rules": [],
+      "note": "用 Telegram 完整规则替代 IP 分类，统一交给社交分组。"
+    },
+    {
+      "category": "reddit",
+      "policy": "💬 社交",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Reddit/Reddit.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "pinterest",
+      "policy": "💬 社交",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Pinterest/Pinterest.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "snap",
+      "policy": "💬 社交",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Snap/Snap.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "twitch",
+      "policy": "📺 视频",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "category-social-media-!cn",
+      "policy": "💬 社交",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitter/Twitter.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Facebook/Facebook.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Instagram/Instagram.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Reddit/Reddit.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Pinterest/Pinterest.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Snap/Snap.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Threads/Threads.list"
+      ],
+      "rules": [],
+      "note": "常见海外社交平台组合。"
+    },
+    {
+      "category": "category-communication",
+      "policy": "💬 社交",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Whatsapp/Whatsapp.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Line/Line.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Discord/Discord.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Slack/Slack.list",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Teams/Teams.list"
+      ],
+      "rules": [
+        "DOMAIN-SUFFIX,signal.org",
+        "DOMAIN-SUFFIX,signal.art"
+      ],
+      "note": "常见海外通信服务组合。"
+    },
+    {
+      "category": "cn",
+      "policy": "DIRECT",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMaxNoIP/ChinaMaxNoIP.list"
+      ],
+      "rules": [],
+      "note": "按服务用途替换为小火箭兼容规则。"
+    }
+  ],
+  "checked_sources": [
+    {
+      "url": "https://anti-ad.net/surge.txt",
+      "checked_rule_count": 103068,
+      "checked_sha256": "64e7403db1eb7df5fe46da60acd8c0c1b98d91453958fa5b3c85e0e7716682a6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Anthropic/Anthropic.list",
+      "checked_rule_count": 3,
+      "checked_sha256": "ee68bf42bf5666943067127776e40643f6f52bdd911152b1be62b3ecb187dc8e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple.list",
+      "checked_rule_count": 43,
+      "checked_sha256": "438384889951117d5f432b600c4b3009583f466de7e87bbe2db865a2ac732a0c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Atlassian/Atlassian.list",
+      "checked_rule_count": 5,
+      "checked_sha256": "243613384193edb80bcc0ee4106fc2b110c23b7c32f46258947be453f483ab9f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Bahamut/Bahamut.list",
+      "checked_rule_count": 8,
+      "checked_sha256": "5c6618ac00734921dae209bb812c1b61cc88523e158b856548153d1d3d8df2fd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/CAS/CAS.list",
+      "checked_rule_count": 43,
+      "checked_sha256": "dca025d030f0c2e5895dbda0527dfccf86a3ab636a7dfd4240f63235809feb07"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/CNKI/CNKI.list",
+      "checked_rule_count": 17,
+      "checked_sha256": "263854f3da026e9603fb0f4b9e7e22ede281a305173fa1de6f20a66683d46607"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMaxNoIP/ChinaMaxNoIP.list",
+      "checked_rule_count": 125,
+      "checked_sha256": "691e62885382b16b1170b03ebebb4b6dc72d820289ecc61b8af58073f023a527"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Claude/Claude.list",
+      "checked_rule_count": 3,
+      "checked_sha256": "870e7e25d798e7f00338507f773b0eea4dfd15e25e9df0a27d5ae421ae1ab378"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Developer/Developer.list",
+      "checked_rule_count": 70,
+      "checked_sha256": "d665f274c517e512aaf7ee72eff8ade6bccfc7146be9fbc24f92707ef2a829ec"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Discord/Discord.list",
+      "checked_rule_count": 29,
+      "checked_sha256": "3d18c8fe716de06891ba3d6c34dba254cb65138a10f79e1a1a0628b5237ecb2c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Disney/Disney.list",
+      "checked_rule_count": 173,
+      "checked_sha256": "65ededc7b608e440f3d918f6e95b19ca52460c8fe368dbd9e840b4bc8669f753"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Docker/Docker.list",
+      "checked_rule_count": 7,
+      "checked_sha256": "2a608ae68e9984677e76da00cf5d76a361e112e75fe5a5d27c65a5117aeadb31"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Facebook/Facebook.list",
+      "checked_rule_count": 570,
+      "checked_sha256": "747563c96825bbd5f868be955543b0ca1979064e7b094f8aab08aafbce577c36"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Game/Game.list",
+      "checked_rule_count": 612,
+      "checked_sha256": "63ed1092c588beb377cad51b574c921ca113a880752b6c0b8c96b9ecc7f13366"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Gemini/Gemini.list",
+      "checked_rule_count": 13,
+      "checked_sha256": "db8f69154426dca76792ab80b3ad6b0e2d078ebe0e52e76faec1724245a4ec49"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list",
+      "checked_rule_count": 31,
+      "checked_sha256": "ced8ab0ecda5775d04ec8ee6a57b282181108565331a6a1d85e9a26fee25d79b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitLab/GitLab.list",
+      "checked_rule_count": 6,
+      "checked_sha256": "0c41418dd3d49d6313c5516b1d828a39aa13e1c08b9750698b5e4ec5d7ba5f8c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalScholar/GlobalScholar.list",
+      "checked_rule_count": 230,
+      "checked_sha256": "0678ba75b4f13649eef4072c93499e2323eed9b450d10e94deed4d9608f74fa8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list",
+      "checked_rule_count": 698,
+      "checked_sha256": "c6efe08ab4c0a12ddba20f5e75abfba2dd63a42b810f8cb5c303433a38e93b73"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/HBO/HBO.list",
+      "checked_rule_count": 49,
+      "checked_sha256": "f89c50e9a1f433dc1acb8a75aa2cab27d4e2fd82f4fed6ba2820ce9b923680e2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Instagram/Instagram.list",
+      "checked_rule_count": 4,
+      "checked_sha256": "65f28f9253b0dbb2a81485c788537896a0817766685e7bd91b2f90ec7aa19548"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Jetbrains/Jetbrains.list",
+      "checked_rule_count": 14,
+      "checked_sha256": "b39e5e21d542e9e0b762984a368a88c9623517124b4a6a4d1c3299c426202aa5"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list",
+      "checked_rule_count": 142,
+      "checked_sha256": "79c3b96f8064bf1b53678fb0dc7d9e92d74c729869fe8dc494afa2e9b12e2856"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Line/Line.list",
+      "checked_rule_count": 24,
+      "checked_sha256": "d13bdaa601bdf37d20dfaf04c2561a06eb9067a81fcd407183730272a0264c92"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list",
+      "checked_rule_count": 671,
+      "checked_sha256": "22df1a1017ad5d41755bf020ca8eb9afeedc7bdc2c649ed2074b255227a7ed8e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Netflix/Netflix.list",
+      "checked_rule_count": 1157,
+      "checked_sha256": "ec37f90727e7db062d754487c4bed68ae8bba28f349aef0995f10c06f5e8b231"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Npmjs/Npmjs.list",
+      "checked_rule_count": 3,
+      "checked_sha256": "f34fcf2718fd12aacc5b7922a0d1bef2cefc6904e70fb3b939dbe8c288f5f5cd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OneDrive/OneDrive.list",
+      "checked_rule_count": 16,
+      "checked_sha256": "9352a648b6a170ec902f4683a9002634e66e776c8362334757bb5ba115f6d3b6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list",
+      "checked_rule_count": 35,
+      "checked_sha256": "6f4047cdbf6953cf5d9b38c4ccd6da7bc6f1acb91b7a87134f25d5b8f5d2408b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Pinterest/Pinterest.list",
+      "checked_rule_count": 23,
+      "checked_sha256": "fec5616657771b81c750c5be622ae206a4ce2cc8e16c8a5debd53826ea575df3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/PrimeVideo/PrimeVideo.list",
+      "checked_rule_count": 18,
+      "checked_sha256": "4f957e0888cc89f61b3f04402282f50a5cf11d4bde7240d2b330bc9e1ba6ca46"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Python/Python.list",
+      "checked_rule_count": 6,
+      "checked_sha256": "f4381f7f548cace7fd7092580d40ce8fa1de51737e892c84ac8c9ed32632e235"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Reddit/Reddit.list",
+      "checked_rule_count": 8,
+      "checked_sha256": "8437bd0bbf3214170f6601f3a9b34d45a7684c9e9f8d7554b608142be8a2e80b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ShiJiChaoXing/ShiJiChaoXing.list",
+      "checked_rule_count": 33,
+      "checked_sha256": "59e01eac661989c5e8ff5566bfa7dab53fd931da0cefeda5b419b479d0b436ee"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Slack/Slack.list",
+      "checked_rule_count": 11,
+      "checked_sha256": "aaf3f294bbf0c6b22a0e28f701eea3d8f6697581e1981be34822361916eee9e1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Snap/Snap.list",
+      "checked_rule_count": 6,
+      "checked_sha256": "67e1a466e52a4fca448559566363bd4c221f612ce167642a149f4a070485aaff"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SourceForge/SourceForge.list",
+      "checked_rule_count": 4,
+      "checked_sha256": "ef959663e868bc13fb41884d1058c57191e9b0121ca0ae9756367a66c98092fe"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list",
+      "checked_rule_count": 30,
+      "checked_sha256": "577afc9442a38c578e0aa8769b192d2f935e808114c60cbd5afd2294c79b74d0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Stackexchange/Stackexchange.list",
+      "checked_rule_count": 20,
+      "checked_sha256": "31b8d2c65b8795d2647aaeea32cd2b44d95ed04297e374bd859f1a73d7819617"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Steam/Steam.list",
+      "checked_rule_count": 69,
+      "checked_sha256": "290ebccc4be56defc7d36f85d8c9777101548a4f2147ca29fe50b794c6a8dec7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/SteamCN/SteamCN.list",
+      "checked_rule_count": 17,
+      "checked_sha256": "82c144434e9199c524d95caa8e3659c9f6f1de9fd23b223a58b5d3c821923936"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Teams/Teams.list",
+      "checked_rule_count": 4,
+      "checked_sha256": "798202ddb4c44c7d3661fa7c304646e58d9296e2678e39a5ea575a2c79f50a3f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list",
+      "checked_rule_count": 40,
+      "checked_sha256": "09f093cce5b3e2994147a2640e03040aac75e1db7bf2103fd1c9a2509b0176ab"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Threads/Threads.list",
+      "checked_rule_count": 1,
+      "checked_sha256": "e9b86a51952a33ee50ad3b31dc98bcb09699bbeb4d21371762b1124cb0091e86"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list",
+      "checked_rule_count": 35,
+      "checked_sha256": "94262918311e66c8a3bcf5a65173ff0c4e1ceaa29e24644acafadc127121a295"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list",
+      "checked_rule_count": 21,
+      "checked_sha256": "c4a4e09eaf1b83110d2839b160fffa54d0c9ad17692bb43ae8650ff83181234d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitter/Twitter.list",
+      "checked_rule_count": 33,
+      "checked_sha256": "64c836f2431ca0d4728cc545bb74280ee50c886e346040012e6cdd2f3eee3f97"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Wanfang/Wanfang.list",
+      "checked_rule_count": 2,
+      "checked_sha256": "688512aebb9bed0ab3dac183ef2fc01b34c1d9f7e395b5bf11ac6bb6e9080d78"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Whatsapp/Whatsapp.list",
+      "checked_rule_count": 17,
+      "checked_sha256": "644fd145b484079ff65f681deb17a6dbf1aff620afea56b1a3c24d29d9f9db4f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Wikimedia/Wikimedia.list",
+      "checked_rule_count": 20,
+      "checked_sha256": "329449efa2ba372b0be10e8bb1ced920b67d2918b88bc65bbdd4bc437f4442ce"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list",
+      "checked_rule_count": 190,
+      "checked_sha256": "f764cd91a779982225b3553ece8033c86a6545f4990f5fefd356805de962aee9"
+    }
+  ],
+  "notes": [
+    "Purpose-based Shadowrocket rule mapping; no GeoSite conversion or regular-expression omission.",
+    "Maintained remote rule sets plus a small set of supplemental domains; no MetaCubeX dependency at build or runtime.",
+    "DNS uses an independent baseline; Mihomo DNS policies are not exported.",
+    "Import node subscriptions separately. Client-specific group differences are listed below.",
+    "Remote rule URLs update independently; on-device loading and routing have not been tested."
+  ]
+}
