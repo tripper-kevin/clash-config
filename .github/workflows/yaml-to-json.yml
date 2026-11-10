@@ -1,0 +1,57 @@
+name: Sync client configurations
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - Merge.yaml
+      - scripts/**
+      - tests/**
+      - .github/workflows/yaml-to-json.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-client-configs
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install PyYAML==6.0.2
+      - name: Test converter
+        run: python -m unittest discover -s tests -v
+      - name: Generate and commit outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          # If main changes during conversion, rebuild from the new source.
+          # Never rebase an old generated output over a newer Merge.yaml.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/sync_configs.py
+            git add -- Merge.json Shadowrocket.conf conversion-report.json shadowrocket-rules
+            if git diff --cached --quiet; then
+              exit 0
+            fi
+            git commit -m 'chore: sync generated client configurations'
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+          done
+          echo 'Could not push generated outputs; check branch permissions or rerun.' >&2
+          exit 1
