@@ -549,8 +549,8 @@
   "checked_sources": [
     {
       "url": "https://anti-ad.net/surge.txt",
-      "checked_rule_count": 103068,
-      "checked_sha256": "64e7403db1eb7df5fe46da60acd8c0c1b98d91453958fa5b3c85e0e7716682a6"
+      "checked_rule_count": 101636,
+      "checked_sha256": "ba0efcff7ef0af9d06ad9266f2a8110756d3e0a0d771076430fe602b64ce7bb6"
     },
     {
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Anthropic/Anthropic.list",
