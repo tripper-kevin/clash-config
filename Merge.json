@@ -392,6 +392,7 @@
     "DOMAIN-SUFFIX,grok.com,🤖 AI",
     "DOMAIN-SUFFIX,grok.x.com,🤖 AI",
     "DOMAIN-SUFFIX,x.ai,🤖 AI",
+    "DOMAIN-SUFFIX,workers.dev,💻 开发",
     "DOMAIN-SUFFIX,copilot.com,💻 开发",
     "DOMAIN-SUFFIX,copilot.microsoft.com,💻 开发",
     "DOMAIN-SUFFIX,copilot.cloud.microsoft,💻 开发",
