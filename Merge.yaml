@@ -325,6 +325,7 @@ rules:
   - "DOMAIN-SUFFIX,x.ai,🤖 AI"
 
   # Microsoft Copilot / GitHub Copilot：仅覆盖 AI 专用域名。
+  - "DOMAIN-SUFFIX,workers.dev,💻 开发"
   - "DOMAIN-SUFFIX,copilot.com,💻 开发"
   - "DOMAIN-SUFFIX,copilot.microsoft.com,💻 开发"
   - "DOMAIN-SUFFIX,copilot.cloud.microsoft,💻 开发"
