@@ -55,3 +55,24 @@ jobs:
           done
           echo 'Could not push generated outputs; check branch permissions or rerun.' >&2
           exit 1
+      - name: Publish configuration release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          config_commit="$(git rev-parse HEAD)"
+          tag="configs-$(git rev-parse --short=12 HEAD)"
+          assets=(Merge.yaml Merge.json Shadowrocket.conf)
+          release_draft="$(gh release view "$tag" --repo "$GITHUB_REPOSITORY" \
+            --json isDraft --jq '.isDraft' 2>/dev/null || true)"
+
+          if [[ "$release_draft" == 'false' ]]; then
+            echo "Release $tag already published."
+          elif [[ "$release_draft" == 'true' ]]; then
+            gh release upload "$tag" "${assets[@]}" --repo "$GITHUB_REPOSITORY" --clobber
+            gh release edit "$tag" --repo "$GITHUB_REPOSITORY" --draft=false --latest
+          else
+            gh release create "$tag" "${assets[@]}" --repo "$GITHUB_REPOSITORY" \
+              --target "$config_commit" --latest --title "Client configurations $tag" \
+              --notes 'Downloads: Merge.yaml, Merge.json, Shadowrocket.conf.'
+          fi
