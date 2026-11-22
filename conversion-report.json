@@ -1,5 +1,5 @@
 {
-  "source_sha256": "c1fe17a8bffd3ca29698c820ab49a705cfb8abe49d439edf5491d9cfe5932d9f",
+  "source_sha256": "89bf9c7490d7ac6842bf118641a1f2bff9d04ecb9c4b7ad7b84604f7bdb80e24",
   "skipped_rules": [
     {
       "rule": "PROCESS-NAME,Antigravity.exe,🌐 Google",
@@ -67,7 +67,10 @@
       "group": "⚡ 自动选择",
       "not_translated": {
         "lazy": true,
-        "expected-status": 204
+        "max-failed-times": 3,
+        "expected-status": 204,
+        "empty-fallback": "REJECT",
+        "exclude-type": "direct"
       }
     },
     {
