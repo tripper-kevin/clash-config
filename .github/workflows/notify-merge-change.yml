@@ -1,0 +1,27 @@
+name: Notify subscription repository
+
+on:
+  push:
+    branches: [main]
+    paths: [Merge.yaml]
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  notify:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Trigger subscription merge
+        env:
+          SUBSCRIPTION_REPO: ${{ secrets.SUBSCRIPTION_REPO }}
+          GH_TOKEN: ${{ secrets.SUBSCRIPTION_DISPATCH_TOKEN }}
+        run: |
+          if [[ -z "$SUBSCRIPTION_REPO" || -z "$GH_TOKEN" ]]; then
+            echo '::error::请先在本仓库设置 SUBSCRIPTION_REPO 和 SUBSCRIPTION_DISPATCH_TOKEN。'
+            exit 1
+          fi
+          gh api --method POST "repos/${SUBSCRIPTION_REPO}/dispatches" \
+            --raw-field event_type=merge-template-changed
