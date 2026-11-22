@@ -1,5 +1,5 @@
 {
-  "source_sha256": "6e37bb8a7357091a55e1d1b0b29ba77c29923018ba1499190de69355f8a2035c",
+  "source_sha256": "c1fe17a8bffd3ca29698c820ab49a705cfb8abe49d439edf5491d9cfe5932d9f",
   "skipped_rules": [
     {
       "rule": "PROCESS-NAME,Antigravity.exe,🌐 Google",

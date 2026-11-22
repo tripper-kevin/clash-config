@@ -345,8 +345,7 @@
         "🇭🇰 香港",
         "🇨🇳 台湾",
         "🇯🇵 日本",
-        "🇸🇬 新加坡",
-        "🇺🇸 美国"
+        "🇸🇬 新加坡"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "expected-status": 204,
