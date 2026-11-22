@@ -263,7 +263,6 @@ proxy-groups:
       - "🇨🇳 台湾"
       - "🇯🇵 日本"
       - "🇸🇬 新加坡"      
-      - "🇺🇸 美国"
     url: https://www.gstatic.com/generate_204
     expected-status: 204
     interval: 1800
