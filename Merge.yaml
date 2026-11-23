@@ -385,6 +385,7 @@ rules:
 
   # 通信及社交平台；显式规则放在大类规则前，便于排查命中情况。
   - "DOMAIN-SUFFIX,whatsapp.biz,💬 社交"
+  - "GEOSITE,telegram,💬 社交"
   - "GEOIP,telegram,💬 社交,no-resolve"
   - "GEOSITE,reddit,💬 社交"
   - "GEOSITE,pinterest,💬 社交"
