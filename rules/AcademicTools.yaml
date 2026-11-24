@@ -1,4 +1,33 @@
 payload:
-  - GEOSITE,wikimedia
-  - GEOSITE,sci-hub
-  - GEOSITE,z-library
+  # 文献管理
+  - DOMAIN-SUFFIX,zotero.org
+  - DOMAIN-SUFFIX,mendeley.com
+  - DOMAIN-SUFFIX,endnote.com
+  - DOMAIN-SUFFIX,paperpile.com
+  - DOMAIN-SUFFIX,readcube.com
+
+  # 文献发现与学术交流
+  - DOMAIN-SUFFIX,semanticscholar.org
+  - DOMAIN-SUFFIX,researchgate.net
+  - DOMAIN-SUFFIX,academia.edu
+  - DOMAIN-SUFFIX,connectedpapers.com
+  - DOMAIN-SUFFIX,researchrabbit.ai
+  - DOMAIN-SUFFIX,litmaps.com
+
+  # 学术 AI
+  - DOMAIN-SUFFIX,elicit.com
+  - DOMAIN-SUFFIX,consensus.app
+  - DOMAIN-SUFFIX,scite.ai
+  - DOMAIN-SUFFIX,scispace.com
+  - DOMAIN-SUFFIX,typeset.io
+
+  # 论文写作与润色
+  - DOMAIN-SUFFIX,overleaf.com
+  - DOMAIN-SUFFIX,mathpix.com
+  - DOMAIN-SUFFIX,paperpal.com
+  - DOMAIN-SUFFIX,writefull.com
+  - DOMAIN-SUFFIX,grammarly.com
+  - DOMAIN-SUFFIX,quillbot.com
+
+  # 上游分类补充
+  - DOMAIN-SUFFIX,z-lib.sk
