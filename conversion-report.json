@@ -123,8 +123,8 @@
       "category": "rule-set:academic-database",
       "policy": "📖 学术数据库",
       "source_path": "rules/AcademicDatabase.yaml",
-      "source_rule_count": 222,
-      "source_sha256": "790b7ae1bd4b0f1a4dd37f3eccd0137b1c0439d71ea3ca3c269a44efbbe5b8c5"
+      "source_rule_count": 221,
+      "source_sha256": "a3a0c4557bb19d422b3579652b791560f9ff1059d4125dea644fdd55d94344e7"
     },
     {
       "category": "wikimedia",
