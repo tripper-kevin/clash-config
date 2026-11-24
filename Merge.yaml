@@ -19,11 +19,11 @@ rule-providers:
     format: mrs
     url: https://anti-ad.net/mihomo.mrs
     interval: 86400
-  academic-database:
+    academic-tools:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/tripper-kevin/clash-config/main/rules/AcademicDatabase.yaml
+    url: https://raw.githubusercontent.com/tripper-kevin/clash-config/main/rules/AcademicTools.yaml
     interval: 86400
 #DNS规则，适配清华校园网
 dns:
@@ -111,7 +111,7 @@ proxy-groups:
       - 🇸🇬 新加坡
       - 🇺🇸 美国
       - 🚀 节点选择
-  - name: 📖 学术数据库
+  - name: 📖 学术资源
     type: select
     proxies:
       - 🇭🇰 香港
@@ -249,27 +249,14 @@ rules:
   - GEOIP,private,DIRECT,no-resolve
   - RULE-SET,anti-ad,REJECT
 
-  # 02 特殊分流：Google 生态、YouTube 与学术数据库
+  # 02 特殊分流
   - GEOSITE,youtube,🎬 流媒体
   - GEOSITE,google,🌐 Google
   - PROCESS-NAME,Antigravity.exe,🌐 Google
-  - RULE-SET,academic-database,📖 学术数据库
 
-  # 03 科研工具
-  - DOMAIN-SUFFIX,zotero.org,📚 科研工具
-  - DOMAIN-SUFFIX,overleaf.com,📚 科研工具
-  - DOMAIN-SUFFIX,elicit.com,📚 科研工具
-  - DOMAIN-SUFFIX,consensus.app,📚 科研工具
-  - DOMAIN-SUFFIX,scite.ai,📚 科研工具
-  - DOMAIN-SUFFIX,mathpix.com,📚 科研工具
-  - DOMAIN-SUFFIX,scispace.com,📚 科研工具
-  - DOMAIN-SUFFIX,typeset.io,📚 科研工具
-  - DOMAIN-SUFFIX,paperpal.com,📚 科研工具
-  - DOMAIN-SUFFIX,grammarly.com,📚 科研工具
-  - DOMAIN-SUFFIX,quillbot.com,📚 科研工具
-  - GEOSITE,wikimedia,📚 科研工具
-  - DOMAIN-SUFFIX,z-lib.sk,📚 科研工具
-  - GEOSITE,category-scholar-!cn,📚 科研工具
+  # 03 学术
+  - RULE-SET,academic-tools,📚 科研工具
+  - GEOSITE,category-scholar-!cn,📖 学术资源
 
   # 04 软件开发
   - GEOSITE,category-dev@cn,DIRECT
