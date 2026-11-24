@@ -16,8 +16,8 @@ rule-providers:
   anti-ad:
     type: http
     behavior: domain
-    format: yaml
-    url: https://anti-ad.net/clash.yaml
+    format: mrs
+    url: https://anti-ad.net/mihomo.mrs
     interval: 86400
   academic-database:
     type: http
