@@ -18,8 +18,8 @@
     "anti-ad": {
       "type": "http",
       "behavior": "domain",
-      "format": "mrs",
-      "url": "https://anti-ad.net/mihomo.mrs",
+      "format": "yaml",
+      "url": "https://anti-ad.net/clash.yaml",
       "interval": 86400
     },
     "academic-database": {
