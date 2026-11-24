@@ -352,7 +352,6 @@ payload:
   - DOMAIN,angle.com.tw
   # 汉珍数位
   - DOMAIN-SUFFIX,infolinker.com.tw
-  - DOMAIN,hanzhen.xmulib.org
   # --- 经济、金融与统计数据库 ---
   # Bureau van Dijk / Orbis
   - DOMAIN-SUFFIX,bvdinfo.com
