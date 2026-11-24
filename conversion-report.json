@@ -1,5 +1,5 @@
 {
-  "source_sha256": "14d1a2969e6910397cbfe84f3e70428af4a76f2ae8fa75e654b47ddb9bd51353",
+  "source_sha256": "b073a0ebedc46f585f6f4f2ea0fc374f2398a3327535cf0558b2420b6f873f2e",
   "skipped_rules": [
     {
       "rule": "PROCESS-NAME,Antigravity.exe,🌐 Google",
@@ -100,15 +100,6 @@
       ],
       "rules": [],
       "note": "按服务用途替换为小火箭兼容规则。"
-    },
-    {
-      "category": "category-ads",
-      "policy": "REJECT",
-      "urls": [
-        "https://anti-ad.net/surge.txt"
-      ],
-      "rules": [],
-      "note": "广告统一使用 anti-ad；重复引用自动合并。"
     },
     {
       "category": "category-games@cn",
@@ -458,6 +449,15 @@
       ],
       "rules": [],
       "note": "开发工具、代码托管、包管理和开发社区组合。"
+    },
+    {
+      "category": "telegram",
+      "policy": "💬 社交",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
+      ],
+      "rules": [],
+      "note": "将 Telegram 域名分类转换为小火箭兼容规则。"
     },
     {
       "category": "geoip:telegram",

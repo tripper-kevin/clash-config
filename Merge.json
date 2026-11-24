@@ -46,55 +46,31 @@
       "+.msftconnecttest.com",
       "+.msftncsi.com",
       "+.tsinghua.edu.cn",
-      "+.qq.com"
+      "+.qq.com",
+      "rule-set:anti-ad"
     ],
     "default-nameserver": [
-      "system"
+      "223.5.5.5",
+      "119.29.29.29"
     ],
     "nameserver": [
       "https://dns.alidns.com/dns-query",
       "https://doh.pub/dns-query"
     ],
     "direct-nameserver-follow-policy": true,
-    "fallback-filter": {
-      "geoip": true,
-      "geoip-code": "CN",
-      "ipcidr": [
-        "240.0.0.0/4",
-        "0.0.0.0/32",
-        "198.18.0.0/15",
-        "::/128",
-        "2001:db8::/32"
-      ],
-      "domain": [
-        "+.google.com",
-        "+.facebook.com",
-        "+.youtube.com"
-      ]
-    },
-    "fallback": [
-      "https://1.1.1.1/dns-query#🔄 故障转移",
-      "https://8.8.8.8/dns-query#🔄 故障转移"
-    ],
     "proxy-server-nameserver-policy": {},
     "proxy-server-nameserver": [
       "https://dns.alidns.com/dns-query",
       "https://doh.pub/dns-query"
     ],
     "direct-nameserver": [
-      "system"
+      "https://dns.alidns.com/dns-query",
+      "https://doh.pub/dns-query"
     ],
     "nameserver-policy": {
+      "rule-set:anti-ad": "rcode://name_error",
       "+.tsinghua.edu.cn": [
         "system"
-      ],
-      "+.anthropic.com": [
-        "https://1.1.1.1/dns-query#🤖 AI",
-        "https://8.8.8.8/dns-query#🤖 AI"
-      ],
-      "+.claude.ai": [
-        "https://1.1.1.1/dns-query#🤖 AI",
-        "https://8.8.8.8/dns-query#🤖 AI"
       ]
     }
   },
@@ -102,7 +78,6 @@
     {
       "name": "🚀 节点选择",
       "type": "select",
-      "default-selected": "⚡ 自动选择",
       "proxies": [
         "⚡ 自动选择",
         "🔄 故障转移"
@@ -114,7 +89,6 @@
     {
       "name": "🤖 AI",
       "type": "select",
-      "default-selected": "🇸🇬 新加坡",
       "proxies": [
         "🇨🇳 台湾",
         "🇯🇵 日本",
@@ -126,7 +100,6 @@
     {
       "name": "💻 开发",
       "type": "select",
-      "default-selected": "🇸🇬 新加坡",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -139,7 +112,6 @@
     {
       "name": "💬 社交",
       "type": "select",
-      "default-selected": "🚀 节点选择",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -152,7 +124,6 @@
     {
       "name": "📺 视频",
       "type": "select",
-      "default-selected": "🚀 节点选择",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -165,7 +136,6 @@
     {
       "name": "📖 论文",
       "type": "select",
-      "default-selected": "DIRECT",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -179,7 +149,6 @@
     {
       "name": "📚 学术",
       "type": "select",
-      "default-selected": "🚀 节点选择",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -192,7 +161,6 @@
     {
       "name": "🎮 游戏",
       "type": "select",
-      "default-selected": "🚀 节点选择",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -206,7 +174,6 @@
     {
       "name": "🌐 Google",
       "type": "select",
-      "default-selected": "🇸🇬 新加坡",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -219,7 +186,6 @@
     {
       "name": "🍎 Apple",
       "type": "select",
-      "default-selected": "DIRECT",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -233,7 +199,6 @@
     {
       "name": "Ⓜ️ Microsoft",
       "type": "select",
-      "default-selected": "DIRECT",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -247,7 +212,6 @@
     {
       "name": "🐟 其他",
       "type": "select",
-      "default-selected": "DIRECT",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -380,7 +344,6 @@
     "DOMAIN-SUFFIX,msftncsi.com,DIRECT",
     "GEOSITE,private,DIRECT",
     "GEOIP,private,DIRECT,no-resolve",
-    "GEOSITE,category-ads,REJECT",
     "RULE-SET,anti-ad,REJECT",
     "GEOSITE,category-games@cn,DIRECT",
     "GEOSITE,steam,🎮 游戏",
@@ -439,6 +402,7 @@
     "GEOSITE,category-scholar-!cn,📖 论文",
     "GEOSITE,category-dev,💻 开发",
     "DOMAIN-SUFFIX,whatsapp.biz,💬 社交",
+    "GEOSITE,telegram,💬 社交",
     "GEOIP,telegram,💬 社交,no-resolve",
     "GEOSITE,reddit,💬 社交",
     "GEOSITE,pinterest,💬 社交",
