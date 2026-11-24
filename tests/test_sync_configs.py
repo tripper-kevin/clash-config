@@ -41,16 +41,25 @@ class ConversionTests(unittest.TestCase):
         self.assertTrue(all(x['rule'].startswith('PROCESS-NAME,') for x in report['skipped_rules']))
         self.assertEqual(rows[-1], 'FINAL,🐟 其他')
         self.assertLess(text.index('/YouTube/'), text.index('/Google/'))
-        academic_path = sync.ROOT / 'rules/AcademicDatabase.yaml'
+        academic_path = sync.ROOT / 'rules/AcademicTools.yaml'
         academic_data = academic_path.read_bytes()
-        academic = yaml.safe_load(academic_data)['payload']
-        start = rows.index(academic[0] + ',📖 学术数据库')
-        self.assertEqual(rows[start:start + len(academic)], [r + ',📖 学术数据库' for r in academic])
-        self.assertLess(text.index('/Google/'), text.index('DOMAIN-SUFFIX,totalmateria.com,📖 学术数据库'))
-        self.assertLess(start + len(academic) - 1, rows.index('DOMAIN-SUFFIX,zotero.org,📚 科研工具'))
-        self.assertIn({'category': 'rule-set:academic-database', 'policy': '📖 学术数据库',
-                       'source_path': 'rules/AcademicDatabase.yaml', 'source_rule_count': len(academic),
-                       'source_sha256': hashlib.sha256(academic_data).hexdigest()}, report['rule_replacements'])
+        tools = yaml.safe_load(academic_data)['payload']
+        expected = [f'{rule},📚 科研工具' for rule in tools]
+        start = rows.index(expected[0])
+        self.assertEqual(rows[start:start + len(expected)], expected)
+        scholar = next(
+            i for i, row in enumerate(rows)
+            if row.endswith('/GlobalScholar/GlobalScholar.list,📖 学术资源')
+        )
+        self.assertLess(text.index('/Google/'), text.index(expected[0]))
+        self.assertLess(start + len(expected) - 1, scholar)
+        self.assertIn({
+            'category': 'rule-set:academic-tools',
+            'policy': '📚 科研工具',
+            'source_path': 'rules/AcademicTools.yaml',
+            'source_rule_count': len(tools),
+            'source_sha256': hashlib.sha256(academic_data).hexdigest(),
+        }, report['rule_replacements'])
         self.assertLess(text.index('DOMAIN-SUFFIX,jetbrains.com.cn,DIRECT'), text.index('/Developer/'))
         self.assertLess(text.index('DOMAIN,copilot-proxy.githubusercontent.com,💻 软件开发'), text.index('/GitHub/'))
         self.assertLess(text.index('/SteamCN/'), text.index('/Game/'))
