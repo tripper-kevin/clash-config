@@ -19,6 +19,12 @@ rule-providers:
     format: yaml
     url: https://anti-ad.net/clash.yaml
     interval: 86400
+  academic-database:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/tripper-kevin/clash-config/main/rules/AcademicDatabase.yaml
+    interval: 86400
 #DNS规则，适配清华校园网
 dns:
   enable: true
@@ -56,7 +62,6 @@ dns:
     rule-set:anti-ad: rcode://name_error
     +.tsinghua.edu.cn:
       - system
-
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -69,7 +74,7 @@ proxy-groups:
 
   # 业务策略组
 
-  - name: 🤖 AI
+  - name: 🤖 人工智能
     type: select
     proxies:
       - 🇨🇳 台湾
@@ -77,18 +82,7 @@ proxy-groups:
       - 🇸🇬 新加坡
       - 🇺🇸 美国
       - 🚀 节点选择
-
-  - name: 💻 开发
-    type: select
-    proxies:
-      - 🇭🇰 香港
-      - 🇨🇳 台湾
-      - 🇯🇵 日本
-      - 🇸🇬 新加坡
-      - 🇺🇸 美国
-      - 🚀 节点选择
-
-  - name: 💬 社交
+  - name: 💻 软件开发
     type: select
     proxies:
       - 🇭🇰 香港
@@ -98,7 +92,7 @@ proxy-groups:
       - 🇺🇸 美国
       - 🚀 节点选择
 
-  - name: 📺 视频
+  - name: 💬 通信社交
     type: select
     proxies:
       - 🇭🇰 香港
@@ -108,7 +102,7 @@ proxy-groups:
       - 🇺🇸 美国
       - 🚀 节点选择
 
-  - name: 📖 论文
+  - name: 🎬 流媒体
     type: select
     proxies:
       - 🇭🇰 香港
@@ -117,19 +111,7 @@ proxy-groups:
       - 🇸🇬 新加坡
       - 🇺🇸 美国
       - 🚀 节点选择
-      - DIRECT
-
-  - name: 📚 学术
-    type: select
-    proxies:
-      - 🇭🇰 香港
-      - 🇨🇳 台湾
-      - 🇯🇵 日本
-      - 🇸🇬 新加坡
-      - 🇺🇸 美国
-      - 🚀 节点选择
-
-  - name: 🎮 游戏
+  - name: 📖 学术数据库
     type: select
     proxies:
       - 🇭🇰 香港
@@ -140,6 +122,26 @@ proxy-groups:
       - 🚀 节点选择
       - DIRECT
 
+  - name: 📚 科研工具
+    type: select
+    proxies:
+      - 🇭🇰 香港
+      - 🇨🇳 台湾
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇺🇸 美国
+      - 🚀 节点选择
+
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - 🇭🇰 香港
+      - 🇨🇳 台湾
+      - 🇯🇵 日本
+      - 🇸🇬 新加坡
+      - 🇺🇸 美国
+      - 🚀 节点选择
+      - DIRECT
   - name: 🌐 Google
     type: select
     proxies:
@@ -171,7 +173,6 @@ proxy-groups:
       - 🇺🇸 美国
       - 🚀 节点选择
       - DIRECT
-
   - name: 🐟 其他
     type: select
     proxies:
@@ -184,7 +185,6 @@ proxy-groups:
       - DIRECT
 
   # 地区自动组（共用自动组选项）
-
   - name: 🇭🇰 香港
     <<: &auto
       type: url-test
@@ -204,7 +204,6 @@ proxy-groups:
   - name: 🇨🇳 台湾
     <<: *auto
     filter: (?i)(台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\bTW\b|Taiwan|Taipei|Kaohsiung)
-
   - name: 🇯🇵 日本
     <<: *auto
     filter: (?i)(日本|🇯🇵|\bJP\b|Japan|Tokyo|Osaka|Saitama|Nagoya)
@@ -218,7 +217,6 @@ proxy-groups:
     filter: (?i)(美国|美國|🇺🇸|\bUS\b|\bUSA\b|United ?States|Los ?Angeles|San ?Jose|Seattle|Dallas|New ?York|Chicago|Ashburn)
 
   # 全局自动选择
-
   - name: ⚡ 自动选择
     <<: *auto
     # 按节点名称纳入香港、台湾、日本、新加坡。
@@ -226,7 +224,6 @@ proxy-groups:
     hidden: true
 
   # 故障转移
-
   - name: 🔄 故障转移
     type: fallback
     proxies:
@@ -244,123 +241,84 @@ proxy-groups:
     hidden: true
 
 rules:
-  # 校园网与局域网优先直连。
+  # 01 基础网络与广告拦截
   - DOMAIN-SUFFIX,tsinghua.edu.cn,DIRECT
   - DOMAIN-SUFFIX,msftconnecttest.com,DIRECT
   - DOMAIN-SUFFIX,msftncsi.com,DIRECT
   - GEOSITE,private,DIRECT
   - GEOIP,private,DIRECT,no-resolve
-
-  # 广告拦截。
   - RULE-SET,anti-ad,REJECT
 
-  # 游戏平台国内资源与下载节点直连，其余资源由游戏组控制。
-  - GEOSITE,category-games@cn,DIRECT
-  - GEOSITE,steam,🎮 游戏
-  - GEOSITE,category-games-!cn,🎮 游戏
-
-  # 主要 AI 专用分流：服务集合及手写例外优先于后面的平台与 AI 大类。
-  # AI 服务统一由业务组控制；Gemini / Google AI 由 Google 服务组控制。
-
-  # ChatGPT / OpenAI / Sora：专用集合先于 Microsoft，避免 Azure 资源误分流。
-  - GEOSITE,openai,🤖 AI
-
-  # Claude / Anthropic：网页、API、Claude Code 及内容资源。
-  - GEOSITE,anthropic,🤖 AI
-
-  # Perplexity。
-  - GEOSITE,perplexity,🤖 AI
-
-  # Grok / xAI。
-  - DOMAIN-SUFFIX,grok.com,🤖 AI
-  - DOMAIN-SUFFIX,grok.x.com,🤖 AI
-  - DOMAIN-SUFFIX,x.ai,🤖 AI
-
-  # Microsoft Copilot / GitHub Copilot：仅覆盖 AI 专用域名。
-  - DOMAIN-SUFFIX,workers.dev,💻 开发
-  - DOMAIN-SUFFIX,copilot.com,💻 开发
-  - DOMAIN-SUFFIX,copilot.microsoft.com,💻 开发
-  - DOMAIN-SUFFIX,copilot.cloud.microsoft,💻 开发
-  - DOMAIN-SUFFIX,copilot-stg.com,💻 开发
-  - DOMAIN-SUFFIX,githubcopilot.com,💻 开发
-  - DOMAIN,copilot-proxy.githubusercontent.com,💻 开发
-  - DOMAIN,copilot-workspace.githubnext.com,💻 开发
-  - DOMAIN,copilotprodattachments.blob.core.windows.net,💻 开发
-
-  # Cursor：专用开发分流先于 AI 大类。
-  - GEOSITE,cursor,💻 开发
-
-  # 原有非 AI 资源规则。
-  - DOMAIN-SUFFIX,stardock.cachefly.net,🎮 游戏
-
-  # 科研、写作、翻译和学术资源统一由学术服务组控制。
-  - DOMAIN-SUFFIX,elicit.com,📚 学术
-  - DOMAIN-SUFFIX,consensus.app,📚 学术
-  - DOMAIN-SUFFIX,scite.ai,📚 学术
-  - DOMAIN-SUFFIX,mathpix.com,📚 学术
-  - DOMAIN-SUFFIX,scispace.com,📚 学术
-  - DOMAIN-SUFFIX,typeset.io,📚 学术
-  - DOMAIN-SUFFIX,paperpal.com,📚 学术
-  - DOMAIN-SUFFIX,grammarly.com,📚 学术
-  - DOMAIN-SUFFIX,quillbot.com,📚 学术
-  - GEOSITE,wikimedia,📚 学术
-
-  # 视频与流媒体规则优先于宽泛的 Google 规则，避免 YouTube 被提前归入 Google。
-  - GEOSITE,disney@cn,DIRECT
-  - GEOSITE,primevideo@cn,DIRECT
-  - GEOSITE,netflix,📺 视频
-  - GEOSITE,disney,📺 视频
-  - GEOSITE,hbo,📺 视频
-  - GEOSITE,primevideo,📺 视频
-  - GEOSITE,youtube,📺 视频
-  - GEOSITE,tiktok,📺 视频
-  - GEOSITE,bahamut,📺 视频
-  - GEOSITE,spotify,📺 视频
-  - PROCESS-NAME,Antigravity.exe,🌐 Google
+  # 02 特殊分流：Google 生态、YouTube 与学术数据库
+  - GEOSITE,youtube,🎬 流媒体
   - GEOSITE,google,🌐 Google
+  - PROCESS-NAME,Antigravity.exe,🌐 Google
+  - RULE-SET,academic-database,📖 学术数据库
 
-  # 明确归入开发组的平台优先于后面的 Microsoft 与 AI 大类。
-  - GEOSITE,github,💻 开发
-  - GEOSITE,huggingface,💻 开发
+  # 03 科研工具
+  - DOMAIN-SUFFIX,zotero.org,📚 科研工具
+  - DOMAIN-SUFFIX,overleaf.com,📚 科研工具
+  - DOMAIN-SUFFIX,elicit.com,📚 科研工具
+  - DOMAIN-SUFFIX,consensus.app,📚 科研工具
+  - DOMAIN-SUFFIX,scite.ai,📚 科研工具
+  - DOMAIN-SUFFIX,mathpix.com,📚 科研工具
+  - DOMAIN-SUFFIX,scispace.com,📚 科研工具
+  - DOMAIN-SUFFIX,typeset.io,📚 科研工具
+  - DOMAIN-SUFFIX,paperpal.com,📚 科研工具
+  - DOMAIN-SUFFIX,grammarly.com,📚 科研工具
+  - DOMAIN-SUFFIX,quillbot.com,📚 科研工具
+  - GEOSITE,wikimedia,📚 科研工具
+  - DOMAIN-SUFFIX,z-lib.sk,📚 科研工具
+  - GEOSITE,category-scholar-!cn,📚 科研工具
 
-  # Apple 与 Microsoft 直连或代理
-  - GEOSITE,onedrive,Ⓜ️ Microsoft
+  # 04 软件开发
+  - GEOSITE,category-dev@cn,DIRECT
+  - DOMAIN-SUFFIX,workers.dev,💻 软件开发
+  - GEOSITE,github-copilot,💻 软件开发
+  - GEOSITE,cursor,💻 软件开发
+  - GEOSITE,github,💻 软件开发
+  - GEOSITE,huggingface,💻 软件开发
+  - GEOSITE,atlassian,💻 软件开发
+  - GEOSITE,sourceforge,💻 软件开发
+  - GEOSITE,category-dev,💻 软件开发
+
+  # 05 人工智能
+  - GEOSITE,category-ai-!cn,🤖 人工智能
+
+  # 06 游戏平台
+  - GEOSITE,category-games@cn,DIRECT
+  - DOMAIN-SUFFIX,stardock.cachefly.net,🎮 游戏平台
+  - GEOSITE,category-games-!cn,🎮 游戏平台
+
+  # 07 流媒体
+  - GEOSITE,netflix,🎬 流媒体
+  - GEOSITE,disney@cn,DIRECT
+  - GEOSITE,disney,🎬 流媒体
+  - GEOSITE,hbo,🎬 流媒体
+  - GEOSITE,primevideo@cn,DIRECT
+  - GEOSITE,primevideo,🎬 流媒体
+  - GEOSITE,tiktok,🎬 流媒体
+  - GEOSITE,bahamut,🎬 流媒体
+  - GEOSITE,spotify,🎬 流媒体
+  - GEOSITE,twitch,🎬 流媒体
+
+  # 08 通信社交
+  - DOMAIN-SUFFIX,whatsapp.biz,💬 通信社交
+  - GEOSITE,reddit,💬 通信社交
+  - GEOSITE,pinterest,💬 通信社交
+  - GEOSITE,snap,💬 通信社交
+  - GEOSITE,category-social-media-!cn,💬 通信社交
+  - GEOSITE,category-communication,💬 通信社交
+
+  # 09 品牌生态
   - GEOSITE,microsoft,Ⓜ️ Microsoft
   - GEOSITE,apple,🍎 Apple
 
-  # 其他非中国大陆 AI 服务，含 Poe、Mistral、Meta AI、OpenRouter、Midjourney。
-  - GEOSITE,category-ai-!cn,🤖 AI
-
-  # 开发与科研平台。
-  - GEOSITE,sci-hub,📚 学术
-  - GEOSITE,z-library,📚 学术
-  - DOMAIN-SUFFIX,z-lib.sk,📚 学术
-  - GEOSITE,atlassian,💻 开发
-  - GEOSITE,sourceforge,💻 开发
-
-  # 国内学术资源直连
-  - GEOSITE,category-scholar-cn,DIRECT
-
-  # 国际学术数据库优先直连，可手动切换
-  - GEOSITE,category-scholar-!cn,📖 论文
-  - GEOSITE,category-dev,💻 开发
-
-  # 通信及社交平台；显式规则放在大类规则前，便于排查命中情况。
-  - DOMAIN-SUFFIX,whatsapp.biz,💬 社交
-  - GEOSITE,telegram,💬 社交
-  - GEOIP,telegram,💬 社交,no-resolve
-  - GEOSITE,reddit,💬 社交
-  - GEOSITE,pinterest,💬 社交
-  - GEOSITE,snap,💬 社交
-  - GEOSITE,twitch,📺 视频
-  - GEOSITE,category-social-media-!cn,💬 社交
-  - GEOSITE,category-communication,💬 社交
-
-  # 大陆域名直连
+  # 10 国内通用
   - GEOSITE,cn,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
 
-  # 默认仍为直连，但可在“其他流量”中手动切换出口。
+  # 11 最终兜底
   - MATCH,🐟 其他
 
 profile:
