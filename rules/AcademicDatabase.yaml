@@ -1,4 +1,259 @@
+# 国际学术数据库：独立域名规则集
+# 由 Merge.yaml 中的 academic-database 引用。
 payload:
+  # --- 文献索引、引文分析与综合检索 ---
+  # Clarivate / Web of Science / JCR / InCites
+  - DOMAIN-SUFFIX,clarivate.com
+  - DOMAIN-SUFFIX,webofscience.com
+  - DOMAIN-SUFFIX,webofknowledge.com
+  - DOMAIN-SUFFIX,isiknowledge.com
+  - DOMAIN-SUFFIX,newisiknowledge.com
+  # Scopus
+  - DOMAIN-SUFFIX,scopus.com
+  # Engineering Village
+  - DOMAIN-SUFFIX,engineeringvillage.com
+  # CAS SciFinder
+  - DOMAIN-SUFFIX,cas.org
+  # Reaxys
+  - DOMAIN-SUFFIX,reaxys.com
+  # Embase
+  - DOMAIN-SUFFIX,embase.com
+  # PubMed / PMC / NCBI
+  - DOMAIN-SUFFIX,ncbi.nlm.nih.gov
+  # Europe PMC
+  - DOMAIN-SUFFIX,europepmc.org
+  # Crossref / DOI 解析
+  - DOMAIN-SUFFIX,crossref.org
+  - DOMAIN-SUFFIX,doi.org
+  - DOMAIN-SUFFIX,doi.info
+  # OpenAlex
+  - DOMAIN-SUFFIX,openalex.org
+  # DBLP
+  - DOMAIN-SUFFIX,dblp.org
+  # ERIC
+  - DOMAIN,eric.ed.gov
+  # DOAJ
+  - DOMAIN-SUFFIX,doaj.org
+  # INSPIRE HEP
+  - DOMAIN-SUFFIX,inspirehep.net
+  # --- 综合学术出版商与电子书刊 ---
+  # Elsevier / ScienceDirect / Cell Press / ClinicalKey
+  - DOMAIN-SUFFIX,elsevier.com
+  - DOMAIN-SUFFIX,elsevier.io
+  - DOMAIN-SUFFIX,elsevier-ae.com
+  - DOMAIN-SUFFIX,sciencedirect.com
+  - DOMAIN-SUFFIX,sciencedirectassets.com
+  - DOMAIN-SUFFIX,els-cdn.com
+  - DOMAIN-SUFFIX,cell.com
+  - DOMAIN-SUFFIX,clinicalkey.com
+  - DOMAIN-SUFFIX,knovel.com
+  # Springer Nature / SpringerLink / BMC / Nature
+  - DOMAIN-SUFFIX,springer.com
+  - DOMAIN-SUFFIX,springerlink.com
+  - DOMAIN-SUFFIX,springernature.com
+  - DOMAIN-SUFFIX,nature.com
+  - DOMAIN-SUFFIX,naturemag.org
+  - DOMAIN-SUFFIX,biomedcentral.com
+  - DOMAIN-SUFFIX,wkap.nl
+  - DOMAIN-SUFFIX,apress.com
+  # Wiley Online Library / Hindawi
+  - DOMAIN-SUFFIX,wiley.com
+  - DOMAIN-SUFFIX,literatumonline.com
+  - DOMAIN-SUFFIX,hindawi.com
+  # Taylor & Francis / Routledge
+  - DOMAIN-SUFFIX,tandfonline.com
+  - DOMAIN-SUFFIX,taylorandfrancis.com
+  - DOMAIN-SUFFIX,taylorfrancis.com
+  - DOMAIN-SUFFIX,tandf.co.uk
+  - DOMAIN-SUFFIX,routledgehandbooks.com
+  # SAGE
+  - DOMAIN-SUFFIX,sagepub.com
+  # Oxford University Press
+  - DOMAIN-SUFFIX,oup.com
+  - DOMAIN-SUFFIX,oxfordscholarship.com
+  - DOMAIN-SUFFIX,oxfordhandbooks.com
+  - DOMAIN-SUFFIX,oxfordreference.com
+  - DOMAIN-SUFFIX,oxfordre.com
+  - DOMAIN-SUFFIX,oxfordbibliographies.com
+  - DOMAIN-SUFFIX,oxfordlawtrove.com
+  - DOMAIN-SUFFIX,oxfordfirstsource.com
+  - DOMAIN-SUFFIX,oxfordscholarlyeditions.com
+  - DOMAIN-SUFFIX,oxfordpoliticstrove.com
+  - DOMAIN-SUFFIX,oxfordmedicine.com
+  - DOMAIN-SUFFIX,oxfordclinicalpsych.com
+  - DOMAIN-SUFFIX,oxfordartonline.com
+  - DOMAIN-SUFFIX,oxfordmusiconline.com
+  - DOMAIN-SUFFIX,oxfordwesternmusic.com
+  - DOMAIN-SUFFIX,oxfordaasc.com
+  - DOMAIN-SUFFIX,oxforddnb.com
+  - DOMAIN-SUFFIX,universitypressscholarship.com
+  - DOMAIN-SUFFIX,oed.com
+  - DOMAIN-SUFFIX,ouplaw.com
+  - DOMAIN-SUFFIX,veryshortintroductions.com
+  - DOMAIN-SUFFIX,ukwhoswho.com
+  - DOMAIN-SUFFIX,anb.org
+  # Cambridge University Press
+  - DOMAIN-SUFFIX,cambridge.org
+  # MIT Press
+  - DOMAIN-SUFFIX,mitpressjournals.org
+  - DOMAIN,mitpress.mit.edu
+  - DOMAIN,direct.mit.edu
+  # De Gruyter Brill
+  - DOMAIN-SUFFIX,degruyter.com
+  - DOMAIN-SUFFIX,brill.com
+  # Emerald
+  - DOMAIN-SUFFIX,emerald.com
+  # World Scientific
+  - DOMAIN-SUFFIX,worldscientific.com
+  # Edward Elgar
+  - DOMAIN-SUFFIX,elgaronline.com
+  # Bloomsbury
+  - DOMAIN-SUFFIX,bloomsburycollections.com
+  - DOMAIN-SUFFIX,bloomsburydesignlibrary.com
+  # Bentham Science
+  - DOMAIN-SUFFIX,eurekaselect.com
+  # IGI Global
+  - DOMAIN-SUFFIX,igi-global.com
+  # iG Publishing
+  - DOMAIN-SUFFIX,igpublish.com
+  # Morgan & Claypool
+  - DOMAIN-SUFFIX,morganclaypool.com
+  # Annual Reviews
+  - DOMAIN-SUFFIX,annualreviews.org
+  # John Benjamins
+  - DOMAIN-SUFFIX,jbe-platform.com
+  # Global Science Press
+  - DOMAIN-SUFFIX,global-sci.org
+  # AIMS Press
+  - DOMAIN-SUFFIX,aimsciences.org
+  # European Mathematical Society Press
+  - DOMAIN-SUFFIX,ems-ph.org
+  # Karger
+  - DOMAIN-SUFFIX,karger.com
+  # Thieme
+  - DOMAIN-SUFFIX,thieme.de
+  - DOMAIN-SUFFIX,thieme-connect.com
+  - DOMAIN-SUFFIX,thieme-connect.de
+  - DOMAIN,medone-education.thieme.com
+  # Wolters Kluwer / Ovid
+  - DOMAIN-SUFFIX,wolterskluwer.com
+  - DOMAIN-SUFFIX,ovid.com
+  # Aspen Publishing
+  - DOMAIN-SUFFIX,aspenpublishing.com
+  # Begell House
+  - DOMAIN,dl.begellhouse.com
+  # Silverchair / HighWire 内容平台
+  - DOMAIN-SUFFIX,silverchair-cdn.com
+  - DOMAIN-SUFFIX,highwirepress.com
+  # --- 学协会、专业学科数据库与期刊 ---
+  # IEEE Xplore / IEEE Computer Society
+  - DOMAIN-SUFFIX,ieee.org
+  - DOMAIN-SUFFIX,computer.org
+  # ACM Digital Library
+  - DOMAIN-SUFFIX,acm.org
+  # Association for Computational Linguistics
+  - DOMAIN-SUFFIX,aclweb.org
+  # USENIX
+  - DOMAIN-SUFFIX,usenix.org
+  # ACM SIGCOMM / SIGOPS
+  - DOMAIN-SUFFIX,sigcomm.org
+  - DOMAIN-SUFFIX,sigops.org
+  # ISCA
+  - DOMAIN-SUFFIX,isca-speech.org
+  # ACS Publications
+  - DOMAIN-SUFFIX,acs.org
+  # RSC Publishing
+  - DOMAIN-SUFFIX,rsc.org
+  # APS
+  - DOMAIN-SUFFIX,aps.org
+  # AIP Publishing / Scitation
+  - DOMAIN-SUFFIX,scitation.org
+  - DOMAIN-SUFFIX,aip.org
+  # IOP Publishing
+  - DOMAIN-SUFFIX,iop.org
+  # Optica Publishing Group
+  - DOMAIN-SUFFIX,optica.org
+  - DOMAIN-SUFFIX,osapublishing.org
+  # SPIE Digital Library
+  - DOMAIN-SUFFIX,spiedigitallibrary.org
+  # ASCE Library
+  - DOMAIN-SUFFIX,ascelibrary.org
+  # ASME Digital Collection
+  - DOMAIN-SUFFIX,asme.org
+  # AIAA
+  - DOMAIN-SUFFIX,aiaa.org
+  # ASTM
+  - DOMAIN-SUFFIX,astm.org
+  # ASM International
+  - DOMAIN-SUFFIX,asminternational.org
+  # SAE International
+  - DOMAIN-SUFFIX,sae.org
+  # Electrochemical Society
+  - DOMAIN-SUFFIX,electrochem.org
+  # ICE Virtual Library
+  - DOMAIN-SUFFIX,icevirtuallibrary.com
+  # IWA Publishing
+  - DOMAIN-SUFFIX,iwaponline.com
+  # AGU
+  - DOMAIN-SUFFIX,agu.org
+  # AMS
+  - DOMAIN-SUFFIX,ams.org
+  # SIAM
+  - DOMAIN-SUFFIX,siam.org
+  # INFORMS
+  - DOMAIN-SUFFIX,informs.org
+  # Project Euclid
+  - DOMAIN-SUFFIX,projecteuclid.org
+  # Royal Society
+  - DOMAIN-SUFFIX,royalsocietypublishing.org
+  # AAAS / Science
+  - DOMAIN-SUFFIX,science.org
+  - DOMAIN-SUFFIX,sciencemag.org
+  - DOMAIN-SUFFIX,scienceonline.org
+  # PNAS
+  - DOMAIN-SUFFIX,pnas.org
+  # JMLR
+  - DOMAIN-SUFFIX,jmlr.org
+  # American Psychological Association
+  - DOMAIN-SUFFIX,apa.org
+  # American Association for Cancer Research
+  - DOMAIN-SUFFIX,aacrjournals.org
+  # American Society for Microbiology
+  - DOMAIN-SUFFIX,asm.org
+  # American Society of Plant Biologists
+  - DOMAIN-SUFFIX,aspbjournals.org
+  # American Society of Nephrology
+  - DOMAIN-SUFFIX,asn-online.org
+  # American Speech-Language-Hearing Association
+  - DOMAIN-SUFFIX,asha.org
+  # American Physiological Society
+  - DOMAIN-SUFFIX,physiology.org
+  # Company of Biologists
+  - DOMAIN-SUFFIX,biologists.com
+  # Rockefeller University Press
+  - DOMAIN-SUFFIX,rupress.org
+  # Journal of Neuroscience
+  - DOMAIN-SUFFIX,jneurosci.org
+  # Neurology
+  - DOMAIN-SUFFIX,neurology.org
+  # BMJ
+  - DOMAIN-SUFFIX,bmj.com
+  # JAMA Network
+  - DOMAIN-SUFFIX,jamanetwork.com
+  # NEJM
+  - DOMAIN-SUFFIX,nejm.org
+  # The Lancet
+  - DOMAIN-SUFFIX,thelancet.com
+  # Cochrane Library
+  - DOMAIN-SUFFIX,cochranelibrary.com
+  # JoVE
+  - DOMAIN-SUFFIX,jove.com
+  # BioOne
+  - DOMAIN-SUFFIX,bioone.org
+  # Inorganic Crystal Structure Database
+  - DOMAIN-SUFFIX,icsd.fiz-karlsruhe.de
+  # CRC Handbook / ChemNetBase
+  - DOMAIN-SUFFIX,chemnetbase.com
   # Total Materia
   - DOMAIN-SUFFIX,totalmateria.com
   # Arabidopsis Information Resource
