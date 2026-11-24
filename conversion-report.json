@@ -1,5 +1,5 @@
 {
-  "source_sha256": "40a55aceb8d24d23479285782c309ce4596a7a84ed19a14b595aab6556348195",
+  "source_sha256": "db981af8c94693f3ed6832eb5a404153ecefaf8ecf126767b3a0d811b262b6dd",
   "skipped_rules": [
     {
       "rule": "PROCESS-NAME,Antigravity.exe,🌐 Google",
@@ -130,13 +130,6 @@
       "note": "按服务用途替换为小火箭兼容规则。"
     },
     {
-      "category": "rule-set:academic-database",
-      "policy": "📖 学术数据库",
-      "source_path": "rules/AcademicDatabase.yaml",
-      "source_rule_count": 221,
-      "source_sha256": "a3a0c4557bb19d422b3579652b791560f9ff1059d4125dea644fdd55d94344e7"
-    },
-    {
       "category": "wikimedia",
       "policy": "📚 科研工具",
       "urls": [
@@ -146,8 +139,59 @@
       "note": "按服务用途替换为小火箭兼容规则。"
     },
     {
-      "category": "category-scholar-!cn",
+      "category": "sci-hub",
       "policy": "📚 科研工具",
+      "urls": [],
+      "rules": [
+        "DOMAIN-SUFFIX,sci-hub.se",
+        "DOMAIN-SUFFIX,sci-hub.ee",
+        "DOMAIN-SUFFIX,sci-hub.st",
+        "DOMAIN-SUFFIX,sci-hub.it.nf",
+        "DOMAIN-SUFFIX,sci-hub.mksa.top",
+        "DOMAIN-SUFFIX,sci.hubg.org"
+      ],
+      "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+    },
+    {
+      "category": "z-library",
+      "policy": "📚 科研工具",
+      "urls": [],
+      "rules": [
+        "DOMAIN-SUFFIX,z-library.sk",
+        "DOMAIN-SUFFIX,z-library.se",
+        "DOMAIN-SUFFIX,z-lib.fm",
+        "DOMAIN-SUFFIX,z-lib.gd",
+        "DOMAIN-SUFFIX,z-lib.gl",
+        "DOMAIN-SUFFIX,z-lib.org",
+        "DOMAIN-SUFFIX,zlib.life",
+        "DOMAIN-SUFFIX,zlibcdn.com",
+        "DOMAIN-SUFFIX,zlibcdn2.com",
+        "DOMAIN-SUFFIX,singlelogin.app",
+        "DOMAIN-SUFFIX,singlelogin.me",
+        "DOMAIN-SUFFIX,singlelogin.re",
+        "DOMAIN-SUFFIX,singlelogin.site",
+        "DOMAIN-SUFFIX,1lib.domains",
+        "DOMAIN-SUFFIX,1lib.sk",
+        "DOMAIN-SUFFIX,1lib.to",
+        "DOMAIN-SUFFIX,1lib.cloud",
+        "DOMAIN-SUFFIX,2lib.org",
+        "DOMAIN-SUFFIX,3lib.net",
+        "DOMAIN-SUFFIX,booksc.org",
+        "DOMAIN-SUFFIX,booksc.xyz",
+        "DOMAIN-SUFFIX,b-ok.org"
+      ],
+      "note": "无单独现成集合时，直接补充主要域名；不依赖 GeoSite 数据库，不追求全量别名。"
+    },
+    {
+      "category": "rule-set:academic-tools",
+      "policy": "📚 科研工具",
+      "source_path": "rules/AcademicTools.yaml",
+      "source_rule_count": 23,
+      "source_sha256": "a29656aa9339ce38a3334d94b481ef1b49467243b2af4affa543e654d32e09e3"
+    },
+    {
+      "category": "category-scholar-!cn",
+      "policy": "📖 学术资源",
       "urls": [
         "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalScholar/GlobalScholar.list"
       ],
