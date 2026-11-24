@@ -13,7 +13,8 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = 'https://raw.githubusercontent.com'
-REPO = os.environ.get('GITHUB_REPOSITORY', 'tripper-kevin/clash-config')
+DEFAULT_REPO = 'tripper-kevin/clash-config'
+REPO = os.environ.get('GITHUB_REPOSITORY', DEFAULT_REPO)
 SUPPORTED = {'DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'DOMAIN-WILDCARD'}
 
 
@@ -92,7 +93,37 @@ def validate_native(text, url):
             'checked_sha256': hashlib.sha256(text.encode()).hexdigest()}
 
 
-def render_rules(config, mapping, policies, report):
+def local_classical_rules(name, provider, root):
+    """Read a same-repository classical provider from the checked-out revision."""
+    url = provider.get('url', '')
+    path = None
+    if (provider.get('type'), provider.get('behavior'), provider.get('format')) == ('http', 'classical', 'yaml'):
+        for repo in (REPO, DEFAULT_REPO):
+            prefix = f'{RAW}/{repo}/main/'
+            if url.startswith(prefix):
+                path = url[len(prefix):]
+                break
+    if not path or not re.fullmatch(r'rules/[A-Za-z0-9_-]+\.yaml', path):
+        raise ValueError(f'Unmapped rule provider: {name}')
+
+    source = (root / path).read_bytes()
+    document = yaml.safe_load(source.decode('utf-8-sig'))
+    payload = document.get('payload') if isinstance(document, dict) else None
+    if not isinstance(payload, list) or not payload:
+        raise ValueError(f'{path}: expected a non-empty payload list')
+
+    rules = []
+    for row in payload:
+        if not isinstance(row, str):
+            raise ValueError(f'{path}: invalid classical rule: {row!r}')
+        kind, sep, value = row.partition(',')
+        if kind not in SUPPORTED or not sep or not value or ',' in value or any(c.isspace() for c in value):
+            raise ValueError(f'{path}: unsupported classical rule: {row!r}')
+        rules.append(row)
+    return rules, path, hashlib.sha256(source).hexdigest()
+
+
+def render_rules(config, mapping, policies, report, *, root=ROOT):
     missing = required_mappings(config) - mapping.keys()
     if missing:
         raise ValueError(f'Add native mappings for: {sorted(missing)}')
@@ -134,10 +165,20 @@ def render_rules(config, mapping, policies, report):
         elif kind == 'GEOIP' and not re.fullmatch('[A-Z]{2}', parts[1]):
             expand('geoip:' + parts[1], policy)
         elif kind == 'RULE-SET':
-            provider = config['rule-providers'][parts[1]]
-            if parts[1] != 'anti-ad' or provider.get('url') != 'https://anti-ad.net/clash.yaml':
-                raise ValueError(f'Unmapped rule provider: {parts[1]}')
-            emit(f'RULE-SET,https://anti-ad.net/surge.txt,{policy}')
+            name = parts[1]
+            provider = config.get('rule-providers', {}).get(name)
+            if not isinstance(provider, dict):
+                raise ValueError(f'Undefined rule provider: {name}')
+            if name == 'anti-ad' and provider.get('url') == 'https://anti-ad.net/clash.yaml':
+                emit(f'RULE-SET,https://anti-ad.net/surge.txt,{policy}')
+            else:
+                rows, path, digest = local_classical_rules(name, provider, root)
+                for row in rows:
+                    emit(f'{row},{policy}')
+                report['rule_replacements'].append({
+                    'category': 'rule-set:' + name, 'policy': policy, 'source_path': path,
+                    'source_rule_count': len(rows), 'source_sha256': digest,
+                })
         elif kind == 'MATCH':
             emit(f'FINAL,{policy}')
         elif kind in SUPPORTED | {'GEOIP', 'IP-CIDR', 'IP-CIDR6'}:
@@ -150,15 +191,17 @@ def render_rules(config, mapping, policies, report):
 
 
 def build():
-    config = yaml.safe_load((ROOT / 'Merge.yaml').read_text(encoding='utf-8'))
+    source = (ROOT / 'Merge.yaml').read_bytes()
+    config = yaml.safe_load(source.decode('utf-8-sig'))
     if not isinstance(config, dict):
         raise ValueError('Merge.yaml must be a mapping')
     mapping = json.loads((ROOT / 'scripts/shadowrocket-rule-map.json').read_text(encoding='utf-8'))
-    report = {'source_sha256': hashlib.sha256((ROOT / 'Merge.yaml').read_bytes()).hexdigest(),
+    report = {'source_sha256': hashlib.sha256(source).hexdigest(),
               'skipped_rules': [], 'group_differences': [], 'rule_replacements': [], 'checked_sources': [],
               'notes': [
                   'Purpose-based Shadowrocket rule mapping; no GeoSite conversion or regular-expression omission.',
-                  'Maintained remote rule sets plus a small set of supplemental domains; no MetaCubeX dependency at build or runtime.',
+                  'Maintained remote rule sets and static domain rules; no MetaCubeX downloads at build or runtime.',
+                  'Local classical domain providers are inlined from the checked-out revision.',
                   'DNS uses an independent baseline; Mihomo DNS policies are not exported.',
                   'Import node subscriptions separately. Client-specific group differences are listed below.',
                   'Remote rule URLs update independently; on-device loading and routing have not been tested.',
@@ -172,7 +215,7 @@ def build():
         for policy in group.get('proxies', []):
             if policy not in policies:
                 raise ValueError(f'Explicit node {policy!r} needs a subscription mapping')
-    rules = render_rules(config, mapping, policies, report)
+    rules = render_rules(config, mapping, policies, report, root=ROOT)
     urls = sorted({r.split(',')[1] for r in rules if r.startswith('RULE-SET,')})
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
         futures = {pool.submit(fetch, url): url for url in urls}
@@ -191,9 +234,9 @@ def build():
     output += ['', '[Rule]', *rules]
     with tempfile.TemporaryDirectory(prefix='.sync-', dir=ROOT) as temp:
         stage = Path(temp)
-        (stage / 'Merge.json').write_text(json.dumps(config, ensure_ascii=False, indent=2, allow_nan=False) + '\n', encoding='utf-8')
-        (stage / 'Shadowrocket.conf').write_text('\n'.join(output) + '\n', encoding='utf-8')
-        (stage / 'conversion-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        (stage / 'Merge.json').write_text(json.dumps(config, ensure_ascii=False, indent=2, allow_nan=False) + '\n', encoding='utf-8', newline='\n')
+        (stage / 'Shadowrocket.conf').write_text('\n'.join(output) + '\n', encoding='utf-8', newline='\n')
+        (stage / 'conversion-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
         for name in ('Merge.json', 'Shadowrocket.conf', 'conversion-report.json'):
             (stage / name).replace(ROOT / name)
     # This directory was owned by earlier generator versions. Keep a migration
