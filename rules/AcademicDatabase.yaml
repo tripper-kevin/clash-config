@@ -1,0 +1,120 @@
+  # Total Materia
+  - DOMAIN-SUFFIX,totalmateria.com
+  # Arabidopsis Information Resource
+  - DOMAIN-SUFFIX,arabidopsis.org
+  # Dental Hypotheses
+  - DOMAIN-SUFFIX,dentalhypotheses.com
+  # --- 开放获取、预印本与数据存档 ---
+  # arXiv
+  - DOMAIN-SUFFIX,arxiv.org
+  # bioRxiv
+  - DOMAIN-SUFFIX,biorxiv.org
+  # medRxiv
+  - DOMAIN-SUFFIX,medrxiv.org
+  # SSRN
+  - DOMAIN-SUFFIX,ssrn.com
+  # PLOS
+  - DOMAIN-SUFFIX,plos.org
+  # Frontiers
+  - DOMAIN-SUFFIX,frontiersin.org
+  # MDPI
+  - DOMAIN-SUFFIX,mdpi.com
+  # eLife
+  - DOMAIN-SUFFIX,elifesciences.org
+  # PeerJ
+  - DOMAIN-SUFFIX,peerj.com
+  # Zenodo
+  - DOMAIN-SUFFIX,zenodo.org
+  # OpenReview
+  - DOMAIN-SUFFIX,openreview.net
+  # --- 综合文献库、图书、历史与人文社科 ---
+  # JSTOR / ARTstor
+  - DOMAIN-SUFFIX,jstor.org
+  - DOMAIN-SUFFIX,artstor.org
+  # EBSCOhost
+  - DOMAIN-SUFFIX,ebsco.com
+  - DOMAIN-SUFFIX,ebscohost.com
+  # ProQuest / Ebook Central / Serials Solutions
+  - DOMAIN-SUFFIX,proquest.com
+  - DOMAIN-SUFFIX,serialssolutions.com
+  # Gale
+  - DOMAIN-SUFFIX,gale.com
+  - DOMAIN-SUFFIX,galegroup.com
+  - DOMAIN-SUFFIX,ggsrv.com
+  # Project MUSE
+  - DOMAIN,muse.jhu.edu
+  # OCLC FirstSearch / WorldCat
+  - DOMAIN,firstsearch.oclc.org
+  - DOMAIN-SUFFIX,worldcat.org
+  # Alexander Street
+  - DOMAIN-SUFFIX,alexanderstreet.com
+  # Adam Matthew Digital
+  - DOMAIN-SUFFIX,amdigital.co.uk
+  # Britannica Academic
+  - DOMAIN,academic.eb.com
+  # Books in Print
+  - DOMAIN-SUFFIX,booksinprint.com
+  # Brepolis
+  - DOMAIN-SUFFIX,brepolis.net
+  # Cairn
+  - DOMAIN-SUFFIX,cairn.info
+  # East View
+  - DOMAIN-SUFFIX,dlib.eastview.com
+  # HeinOnline
+  - DOMAIN-SUFFIX,heinonline.org
+  # LexisNexis
+  - DOMAIN-SUFFIX,lexisnexis.com
+  # Westlaw
+  - DOMAIN-SUFFIX,westlaw.com
+  # SIPRI Yearbook
+  - DOMAIN-SUFFIX,sipriyearbook.org
+  # AMA Manual of Style
+  - DOMAIN-SUFFIX,amamanualofstyle.com
+  # Computing Reviews
+  - DOMAIN-SUFFIX,computingreviews.com
+  # CIOS
+  - DOMAIN-SUFFIX,cios.org
+  # JapanKnowledge
+  - DOMAIN-SUFFIX,japanknowledge.com
+  # J-STAGE
+  - DOMAIN-SUFFIX,jstage.jst.go.jp
+  # CiNii
+  - DOMAIN,cir.nii.ac.jp
+  - DOMAIN,ci.nii.ac.jp
+  # Maruzen eBook Library
+  - DOMAIN,elib.maruzen.co.jp
+  # 朝日新闻数据库
+  - DOMAIN,database.asahi.com
+  # 日经 TELECOM
+  - DOMAIN,t21.nikkei.co.jp
+  - DOMAIN,t21ipau.nikkei.co.jp
+  # 华艺学术（境外站）
+  - DOMAIN-SUFFIX,airiti.com
+  - DOMAIN-SUFFIX,airitilibrary.com
+  # 月旦知识库
+  - DOMAIN-SUFFIX,lawdata.com.tw
+  - DOMAIN,angle.com.tw
+  # 汉珍数位
+  - DOMAIN-SUFFIX,infolinker.com.tw
+  - DOMAIN,hanzhen.xmulib.org
+  # --- 经济、金融与统计数据库 ---
+  # Bureau van Dijk / Orbis
+  - DOMAIN-SUFFIX,bvdinfo.com
+  # S&P Capital IQ
+  - DOMAIN-SUFFIX,capitaliq.com
+  # CEIC
+  - DOMAIN-SUFFIX,ceicdata.com
+  # OECD iLibrary
+  - DOMAIN-SUFFIX,oecd-ilibrary.org
+  # World Bank DataBank
+  - DOMAIN,databank.worldbank.org
+  # WRDS / Compustat
+  - DOMAIN,wrds-www.wharton.upenn.edu
+  # Tick Data
+  - DOMAIN-SUFFIX,tickdata.com
+  # GeoLytics
+  - DOMAIN-SUFFIX,geolytics.com
+  # GlobalSpec / Techstreet
+  - DOMAIN-SUFFIX,globalspec.com
+  - DOMAIN-SUFFIX,techstreet.com
+  - DOMAIN-SUFFIX,datasheets360.com
