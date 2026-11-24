@@ -255,6 +255,9 @@ rules:
   - PROCESS-NAME,Antigravity.exe,🌐 Google
 
   # 03 学术
+  - GEOSITE,wikimedia,📚 科研工具
+  - GEOSITE,sci-hub,📚 科研工具
+  - GEOSITE,z-library,📚 科研工具
   - RULE-SET,academic-tools,📚 科研工具
   - GEOSITE,category-scholar-!cn,📖 学术资源
 
