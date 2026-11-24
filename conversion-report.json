@@ -1,5 +1,5 @@
 {
-  "source_sha256": "9ad89c0cdd5890f77da651d846f66072a181cb16706cc8300e43519474d66640",
+  "source_sha256": "40a55aceb8d24d23479285782c309ce4596a7a84ed19a14b595aab6556348195",
   "skipped_rules": [
     {
       "rule": "PROCESS-NAME,Antigravity.exe,🌐 Google",
@@ -100,6 +100,16 @@
       ],
       "rules": [],
       "note": "按服务用途替换为小火箭兼容规则。"
+    },
+    {
+      "category": "rule-set:anti-ad",
+      "policy": "REJECT",
+      "source_format": "mrs",
+      "source_url": "https://anti-ad.net/mihomo.mrs",
+      "urls": [
+        "https://anti-ad.net/surge.txt"
+      ],
+      "note": "Shadowrocket uses the upstream text list; the MRS is not read or bundled."
     },
     {
       "category": "youtube",
