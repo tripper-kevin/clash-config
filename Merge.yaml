@@ -19,7 +19,7 @@ rule-providers:
     format: mrs
     url: https://anti-ad.net/mihomo.mrs
     interval: 86400
-    academic-tools:
+  academic-tools:
     type: http
     behavior: classical
     format: yaml
