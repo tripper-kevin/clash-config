@@ -16,6 +16,13 @@ RAW = 'https://raw.githubusercontent.com'
 DEFAULT_REPO = 'tripper-kevin/clash-config'
 REPO = os.environ.get('GITHUB_REPOSITORY', DEFAULT_REPO)
 SUPPORTED = {'DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'DOMAIN-WILDCARD'}
+ANTI_AD_CLASH_URL = 'https://anti-ad.net/clash.yaml'
+ANTI_AD_MRS_URLS = (
+    'https://anti-ad.net/mihomo.mrs',
+    'https://raw.githubusercontent.com/privacy-protection-tools/anti-ad.github.io/master/docs/mihomo.mrs',
+)
+ANTI_AD_SHADOWROCKET_URL = 'https://anti-ad.net/surge.txt'
+ANTI_AD_MRS_PATH = 'rules/anti-ad.mrs'
 
 
 def fetch(url):
@@ -91,6 +98,20 @@ def validate_native(text, url):
         raise ValueError(f'Invalid native rule set: {url}')
     return {'url': url, 'checked_rule_count': len(rows),
             'checked_sha256': hashlib.sha256(text.encode()).hexdigest()}
+
+
+def anti_ad_format(provider):
+    """Recognize the upstream rule sets or the documented local conversion."""
+    if provider.get('behavior') == 'domain':
+        if (provider.get('type'), provider.get('format', 'yaml'), provider.get('url')) == (
+                'http', 'yaml', ANTI_AD_CLASH_URL):
+            return 'yaml'
+        if (provider.get('type'), provider.get('format')) == ('http', 'mrs') and provider.get('url') in ANTI_AD_MRS_URLS:
+            return 'mrs'
+        if (provider.get('type'), provider.get('format')) == ('file', 'mrs') and provider.get('path') in (
+                ANTI_AD_MRS_PATH, './' + ANTI_AD_MRS_PATH):
+            return 'mrs'
+    raise ValueError('Unmapped rule provider: anti-ad (expected official YAML/MRS or local rules/anti-ad.mrs)')
 
 
 def local_classical_rules(name, provider, root):
@@ -169,8 +190,17 @@ def render_rules(config, mapping, policies, report, *, root=ROOT):
             provider = config.get('rule-providers', {}).get(name)
             if not isinstance(provider, dict):
                 raise ValueError(f'Undefined rule provider: {name}')
-            if name == 'anti-ad' and provider.get('url') == 'https://anti-ad.net/clash.yaml':
-                emit(f'RULE-SET,https://anti-ad.net/surge.txt,{policy}')
+            if name == 'anti-ad':
+                source_format = anti_ad_format(provider)
+                emit(f'RULE-SET,{ANTI_AD_SHADOWROCKET_URL},{policy}')
+                if source_format == 'mrs':
+                    report['rule_replacements'].append({
+                        'category': 'rule-set:anti-ad', 'policy': policy, 'source_format': source_format,
+                        **({'source_url': provider['url']} if provider['type'] == 'http'
+                           else {'source_path': provider['path']}),
+                        'urls': [ANTI_AD_SHADOWROCKET_URL],
+                        'note': 'Shadowrocket uses the upstream text list; the MRS is not read or bundled.',
+                    })
             else:
                 rows, path, digest = local_classical_rules(name, provider, root)
                 for row in rows:
