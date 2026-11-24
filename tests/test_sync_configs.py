@@ -1,7 +1,9 @@
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
 import re
+from tempfile import TemporaryDirectory
 import unittest
 import yaml
 
@@ -27,8 +29,8 @@ class ConversionTests(unittest.TestCase):
         self.assertIn('timeout=5,', line)
 
     def test_full_configuration_has_no_geosite_dependencies(self):
-        config = yaml.safe_load((sync.ROOT / 'Merge.yaml').read_text())
-        mapping = json.loads((sync.ROOT / 'scripts/shadowrocket-rule-map.json').read_text())
+        config = yaml.safe_load((sync.ROOT / 'Merge.yaml').read_text(encoding='utf-8'))
+        mapping = json.loads((sync.ROOT / 'scripts/shadowrocket-rule-map.json').read_text(encoding='utf-8'))
         policies = {g['name'] for g in config['proxy-groups']} | {'DIRECT', 'REJECT', 'PROXY'}
         report = self.report()
         rows = sync.render_rules(config, mapping, policies, report)
@@ -38,9 +40,47 @@ class ConversionTests(unittest.TestCase):
         self.assertNotIn('DOMAIN-REGEX,', text)
         self.assertTrue(all(x['rule'].startswith('PROCESS-NAME,') for x in report['skipped_rules']))
         self.assertEqual(rows[-1], 'FINAL,🐟 其他')
-        self.assertLess(text.index('/SteamCN/'), text.index('/Steam/'))
+        self.assertLess(text.index('/YouTube/'), text.index('/Google/'))
+        academic_path = sync.ROOT / 'rules/AcademicDatabase.yaml'
+        academic_data = academic_path.read_bytes()
+        academic = yaml.safe_load(academic_data)['payload']
+        start = rows.index(academic[0] + ',📖 学术数据库')
+        self.assertEqual(rows[start:start + len(academic)], [r + ',📖 学术数据库' for r in academic])
+        self.assertLess(text.index('/Google/'), text.index('DOMAIN-SUFFIX,totalmateria.com,📖 学术数据库'))
+        self.assertLess(start + len(academic) - 1, rows.index('DOMAIN-SUFFIX,zotero.org,📚 科研工具'))
+        self.assertIn({'category': 'rule-set:academic-database', 'policy': '📖 学术数据库',
+                       'source_path': 'rules/AcademicDatabase.yaml', 'source_rule_count': len(academic),
+                       'source_sha256': hashlib.sha256(academic_data).hexdigest()}, report['rule_replacements'])
+        self.assertLess(text.index('DOMAIN-SUFFIX,jetbrains.com.cn,DIRECT'), text.index('/Developer/'))
+        self.assertLess(text.index('DOMAIN,copilot-proxy.githubusercontent.com,💻 软件开发'), text.index('/GitHub/'))
+        self.assertLess(text.index('/SteamCN/'), text.index('/Game/'))
         self.assertLess(text.index('/OpenAI/'), text.index('/Microsoft/'))
         self.assertEqual(text.count('RULE-SET,https://anti-ad.net/surge.txt,REJECT'), 1)
+
+    def test_local_provider_rejects_invalid_payloads(self):
+        provider = {'type': 'http', 'behavior': 'classical', 'format': 'yaml',
+                    'url': f'{sync.RAW}/{sync.DEFAULT_REPO}/main/rules/Test.yaml'}
+        config = {'rules': ['RULE-SET,test,DIRECT', 'MATCH,DIRECT'], 'rule-providers': {'test': provider}}
+        with TemporaryDirectory() as workdir:
+            root = Path(workdir)
+            path = root / 'rules/Test.yaml'
+            path.parent.mkdir()
+            for payload in ('- DOMAIN,example.org\n', 'payload: []\n', 'payload: [null]\n',
+                            'payload:\n  - DOMAIN,example.org,DIRECT\n', 'payload:\n  - PROCESS-NAME,app.exe\n'):
+                path.write_text(payload, encoding='utf-8')
+                with self.subTest(payload=payload), self.assertRaisesRegex(ValueError, 'rules/Test.yaml:'):
+                    sync.render_rules(config, {}, {'DIRECT'}, self.report(), root=root)
+
+    def test_unknown_or_nonlocal_provider_fails(self):
+        config = {'rules': ['RULE-SET,test,DIRECT', 'MATCH,DIRECT']}
+        with self.assertRaisesRegex(ValueError, 'Undefined rule provider: test'):
+            sync.render_rules(config, {}, {'DIRECT'}, self.report())
+        config['rule-providers'] = {'test': {'type': 'http', 'behavior': 'classical', 'format': 'yaml'}}
+        for url in ('https://example.com/rules/Test.yaml',
+                    f'{sync.RAW}/{sync.DEFAULT_REPO}/main/rules/../Test.yaml'):
+            config['rule-providers']['test']['url'] = url
+            with self.subTest(url=url), self.assertRaisesRegex(ValueError, 'Unmapped rule provider: test'):
+                sync.render_rules(config, {}, {'DIRECT'}, self.report())
 
     def test_composite_mapping_preserves_policy_and_order(self):
         config = {'rules': ['DOMAIN,first.test,DIRECT', 'GEOSITE,test,AI', 'MATCH,DIRECT']}

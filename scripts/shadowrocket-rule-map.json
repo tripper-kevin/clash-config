@@ -221,6 +221,50 @@
     ],
     "note": "海外 AI 用常见服务集合加主要域名补充。"
   },
+  "category-dev@cn": {
+    "urls": [],
+    "rules": [
+      "DOMAIN,cdn.ampproject.org",
+      "DOMAIN,crashlyticsreports-pa.googleapis.com",
+      "DOMAIN,firebase-settings.crashlytics.com",
+      "DOMAIN,update.crashlytics.com",
+      "DOMAIN-SUFFIX,microsoftreactor.cn",
+      "DOMAIN-SUFFIX,microsoftreactor.com.cn",
+      "DOMAIN-SUFFIX,reactorms.com.cn",
+      "DOMAIN,download.visualstudio.microsoft.com",
+      "DOMAIN,vscode.download.prss.microsoft.com",
+      "DOMAIN-SUFFIX,jetbrains.com.cn",
+      "DOMAIN-SUFFIX,cdn.jetbrains.com",
+      "DOMAIN,cdn.apple-mapkit.com",
+      "DOMAIN,cdn1.apple-mapkit.com",
+      "DOMAIN,cdn2.apple-mapkit.com",
+      "DOMAIN,cdn3.apple-mapkit.com",
+      "DOMAIN,cdn4.apple-mapkit.com",
+      "DOMAIN,cdn-cn.apple-mapkit.com",
+      "DOMAIN,cdn-cn1.apple-mapkit.com",
+      "DOMAIN,cdn-cn2.apple-mapkit.com",
+      "DOMAIN,cdn-cn3.apple-mapkit.com",
+      "DOMAIN,cdn-cn4.apple-mapkit.com",
+      "DOMAIN-SUFFIX,researchkit.cn",
+      "DOMAIN-SUFFIX,researchkit.com.cn",
+      "DOMAIN-SUFFIX,swiftui.cn",
+      "DOMAIN-SUFFIX,swiftui.com.cn"
+    ],
+    "note": "静态映射，保留精确域名与后缀匹配的区别。参考 MetaCubeX/meta-rules-dat@ce61660 的 geo/geosite/category-dev@cn.list；构建时不下载。"
+  },
+  "github-copilot": {
+    "urls": [],
+    "rules": [
+      "DOMAIN,copilot-proxy.githubusercontent.com",
+      "DOMAIN,copilot-workspace.githubnext.com",
+      "DOMAIN,production-copilot-host-westus.webpubsub.azure.com",
+      "DOMAIN,copilotprodattachments.blob.core.windows.net",
+      "DOMAIN-SUFFIX,githubcopilot.com",
+      "DOMAIN,copilot-telemetry-service.githubusercontent.com",
+      "DOMAIN,copilot-telemetry.githubusercontent.com"
+    ],
+    "note": "GitHub Copilot 独立匹配。参考 MetaCubeX/meta-rules-dat@ce61660 的 geo/geosite/github-copilot.list；构建时不下载。"
+  },
   "category-dev": {
     "urls": [
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Developer/Developer.list",
