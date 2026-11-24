@@ -20,7 +20,6 @@
       "behavior": "domain",
       "format": "yaml",
       "url": "https://anti-ad.net/clash.yaml",
-      "path": "./ruleset/anti-ad.yaml",
       "interval": 86400
     }
   },
@@ -50,8 +49,7 @@
       "rule-set:anti-ad"
     ],
     "default-nameserver": [
-      "223.5.5.5",
-      "119.29.29.29"
+      "system"
     ],
     "nameserver": [
       "https://dns.alidns.com/dns-query",
@@ -64,8 +62,7 @@
       "https://doh.pub/dns-query"
     ],
     "direct-nameserver": [
-      "https://dns.alidns.com/dns-query",
-      "https://doh.pub/dns-query"
+      "system"
     ],
     "nameserver-policy": {
       "rule-set:anti-ad": "rcode://name_error",
