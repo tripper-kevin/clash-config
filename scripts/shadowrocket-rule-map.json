@@ -368,6 +368,13 @@
     "rules": [],
     "note": "按服务用途替换为小火箭兼容规则。"
   },
+  "telegram": {
+    "urls": [
+      "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
+    ],
+    "rules": [],
+    "note": "将 Telegram 域名分类转换为小火箭兼容规则。"
+  },
   "geoip:telegram": {
     "urls": [
       "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
