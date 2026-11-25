@@ -245,7 +245,6 @@ rules:
   # 02 特殊分流
   - GEOSITE,youtube,🎬 流媒体
   - GEOSITE,google,🌐 Google
-  - PROCESS-NAME,Antigravity.exe,🌐 Google
 
   # 03 学术
   - GEOSITE,wikimedia,📚 科研工具
