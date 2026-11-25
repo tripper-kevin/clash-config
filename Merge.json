@@ -346,7 +346,6 @@
     "RULE-SET,anti-ad,REJECT",
     "GEOSITE,youtube,🎬 流媒体",
     "GEOSITE,google,🌐 Google",
-    "PROCESS-NAME,Antigravity.exe,🌐 Google",
     "GEOSITE,wikimedia,📚 科研工具",
     "GEOSITE,sci-hub,📚 科研工具",
     "GEOSITE,z-library,📚 科研工具",
