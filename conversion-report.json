@@ -765,8 +765,8 @@
     }
   ],
   "notes": [
-    "Purpose-based Shadowrocket rule mapping; no GeoSite conversion or regular-expression omission.",
-    "Maintained remote rule sets and static domain rules; no MetaCubeX downloads at build or runtime.",
+    "GEOSITE uses same-name MetaCubeX rules unless an explicit mapping exists.",
+    "Mixed sources are inlined after finite regex expansion. Other regex rules are reported under omitted_domain_regex.",
     "Local classical domain providers are inlined from the checked-out revision.",
     "DNS uses an independent baseline; Mihomo DNS policies are not exported.",
     "Import node subscriptions separately. Client-specific group differences are listed below.",
