@@ -301,7 +301,10 @@ rules:
   - GEOSITE,cn,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
 
-  # 11 最终兜底
+  # 11 IP规则
+  - GEOIP,telegram,💬 通信社交,no-resolve
+
+  # 12 最终兜底
   - MATCH,🐟 其他
 
 profile:
