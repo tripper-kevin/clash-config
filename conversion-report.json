@@ -1,5 +1,5 @@
 {
-  "source_sha256": "b54d9dca24f01351da32d3adb5978d0371c5a38967d1b6d1f51da1ad99e8e5c1",
+  "source_sha256": "d4535aa42b2c665ddd5d3fbfb32767357421f71c11d33a9366ae61903fdc0022",
   "skipped_rules": [],
   "group_differences": [
     {
@@ -168,6 +168,16 @@
       "source_path": "rules/AcademicTools.yaml",
       "source_rule_count": 22,
       "source_sha256": "3a2d6c653905349fb0c754e619d35767b24269492c62b072ea6bc664adcd2b41"
+    },
+    {
+      "category": "category-scholar-cn",
+      "policy": "DIRECT",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-scholar-cn.list",
+      "source_rule_count": 96,
+      "source_sha256": "fb4b9ed5def99f647a90dc3063f361685d228d794debd34856e6c6f7d85485d0",
+      "expanded_domain_regex": [],
+      "omitted_domain_regex": [],
+      "rendered_as": "remote"
     },
     {
       "category": "category-scholar-!cn",
@@ -539,6 +549,11 @@
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-scholar-!cn.list",
       "checked_rule_count": 466,
       "checked_sha256": "b93de48b0486488bf104a3a508132a5fcc56517ea678ddf6892d710359de3020"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-scholar-cn.list",
+      "checked_rule_count": 96,
+      "checked_sha256": "fb4b9ed5def99f647a90dc3063f361685d228d794debd34856e6c6f7d85485d0"
     },
     {
       "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-social-media-!cn.list",
