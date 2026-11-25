@@ -1,5 +1,5 @@
 {
-  "source_sha256": "a559e204af9624dcdc4bf085cbe0e170339e93959ebc62f9e96eb585faec4132",
+  "source_sha256": "bbbf17df73b53d18f028ee0c2e805c1188e4c17bd27c84ce0e99b4d778a2aedf",
   "skipped_rules": [],
   "group_differences": [
     {
@@ -50,16 +50,6 @@
     },
     {
       "group": "🇺🇸 美国",
-      "not_translated": {
-        "lazy": true,
-        "max-failed-times": 3,
-        "expected-status": 204,
-        "empty-fallback": "REJECT",
-        "exclude-type": "direct"
-      }
-    },
-    {
-      "group": "⚡ 自动选择",
       "not_translated": {
         "lazy": true,
         "max-failed-times": 3,

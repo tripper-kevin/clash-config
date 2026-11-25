@@ -43,10 +43,10 @@
     "use-system-hosts": true,
     "ipv6": true,
     "fake-ip-filter": [
-      "*.lan",
-      "*.local",
-      "*.localhost",
-      "*.arpa",
+      "+.lan",
+      "+.local",
+      "+.localhost",
+      "+.arpa",
       "time.*.com",
       "ntp.*.com",
       "+.msftconnecttest.com",
@@ -78,16 +78,16 @@
       "name": "🚀 节点选择",
       "type": "select",
       "proxies": [
-        "⚡ 自动选择",
         "🔄 故障转移"
       ],
       "include-all": true,
       "exclude-type": "direct",
-      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)"
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|(?:^|[^\\d.])0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)"
     },
     {
       "name": "🤖 人工智能",
       "type": "select",
+      "default-selected": "🇸🇬 新加坡",
       "proxies": [
         "🇨🇳 台湾",
         "🇯🇵 日本",
@@ -99,6 +99,7 @@
     {
       "name": "💻 软件开发",
       "type": "select",
+      "default-selected": "🇸🇬 新加坡",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -111,6 +112,7 @@
     {
       "name": "💬 通信社交",
       "type": "select",
+      "default-selected": "🇭🇰 香港",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -123,6 +125,7 @@
     {
       "name": "🎬 流媒体",
       "type": "select",
+      "default-selected": "🇭🇰 香港",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -135,6 +138,7 @@
     {
       "name": "📖 学术资源",
       "type": "select",
+      "default-selected": "DIRECT",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -148,6 +152,7 @@
     {
       "name": "📚 科研工具",
       "type": "select",
+      "default-selected": "🇸🇬 新加坡",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -160,6 +165,7 @@
     {
       "name": "🎮 游戏平台",
       "type": "select",
+      "default-selected": "🇭🇰 香港",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -173,6 +179,7 @@
     {
       "name": "🌐 Google",
       "type": "select",
+      "default-selected": "🇸🇬 新加坡",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -185,6 +192,7 @@
     {
       "name": "🍎 Apple",
       "type": "select",
+      "default-selected": "DIRECT",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -198,6 +206,7 @@
     {
       "name": "Ⓜ️ Microsoft",
       "type": "select",
+      "default-selected": "DIRECT",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -211,6 +220,7 @@
     {
       "name": "🐟 其他",
       "type": "select",
+      "default-selected": "DIRECT",
       "proxies": [
         "🇭🇰 香港",
         "🇨🇳 台湾",
@@ -233,7 +243,7 @@
       "lazy": true,
       "include-all": true,
       "exclude-type": "direct",
-      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|(?:^|[^\\d.])0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
       "name": "🇭🇰 香港",
       "filter": "(?i)(香港|🇭🇰|\\bHK\\b|Hong ?Kong|HKT)"
     },
@@ -249,7 +259,7 @@
       "lazy": true,
       "include-all": true,
       "exclude-type": "direct",
-      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|(?:^|[^\\d.])0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
       "name": "🇨🇳 台湾",
       "filter": "(?i)(台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\\bTW\\b|Taiwan|Taipei|Kaohsiung)"
     },
@@ -265,7 +275,7 @@
       "lazy": true,
       "include-all": true,
       "exclude-type": "direct",
-      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|(?:^|[^\\d.])0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
       "name": "🇯🇵 日本",
       "filter": "(?i)(日本|🇯🇵|\\bJP\\b|Japan|Tokyo|Osaka|Saitama|Nagoya)"
     },
@@ -281,7 +291,7 @@
       "lazy": true,
       "include-all": true,
       "exclude-type": "direct",
-      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|(?:^|[^\\d.])0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
       "name": "🇸🇬 新加坡",
       "filter": "(?i)(新加坡|狮城|獅城|🇸🇬|\\bSG\\b|Singapore)"
     },
@@ -297,26 +307,9 @@
       "lazy": true,
       "include-all": true,
       "exclude-type": "direct",
-      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
+      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|(?:^|[^\\d.])0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
       "name": "🇺🇸 美国",
       "filter": "(?i)(美国|美國|🇺🇸|\\bUS\\b|\\bUSA\\b|United ?States|Los ?Angeles|San ?Jose|Seattle|Dallas|New ?York|Chicago|Ashburn)"
-    },
-    {
-      "type": "url-test",
-      "url": "https://www.gstatic.com/generate_204",
-      "expected-status": 204,
-      "interval": 1800,
-      "timeout": 5000,
-      "tolerance": 100,
-      "max-failed-times": 3,
-      "empty-fallback": "REJECT",
-      "lazy": true,
-      "include-all": true,
-      "exclude-type": "direct",
-      "exclude-filter": "(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\\s*0\\.\\d+|0\\.\\d+\\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\\s*[:：]?\\s*0\\.\\d+)",
-      "name": "⚡ 自动选择",
-      "filter": "(?i)(香港|🇭🇰|\\bHK\\b|Hong ?Kong|HKT|台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\\bTW\\b|Taiwan|Taipei|Kaohsiung|日本|🇯🇵|\\bJP\\b|Japan|Tokyo|Osaka|Saitama|Nagoya|新加坡|狮城|獅城|🇸🇬|\\bSG\\b|Singapore)",
-      "hidden": true
     },
     {
       "name": "🔄 故障转移",
