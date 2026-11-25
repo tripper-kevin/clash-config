@@ -350,6 +350,7 @@
     "GEOSITE,sci-hub,📚 科研工具",
     "GEOSITE,z-library,📚 科研工具",
     "RULE-SET,academic-tools,📚 科研工具",
+    "GEOSITE,category-scholar-cn,DIRECT",
     "GEOSITE,category-scholar-!cn,📖 学术资源",
     "GEOSITE,category-dev@cn,DIRECT",
     "DOMAIN-SUFFIX,workers.dev,💻 软件开发",
