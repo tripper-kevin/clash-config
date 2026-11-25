@@ -384,8 +384,8 @@
     "GEOSITE,microsoft,Ⓜ️ Microsoft",
     "GEOSITE,apple,🍎 Apple",
     "GEOSITE,cn,DIRECT",
-    "GEOIP,CN,DIRECT,no-resolve",
     "GEOIP,telegram,💬 通信社交,no-resolve",
+    "GEOIP,CN,DIRECT,no-resolve",
     "MATCH,🐟 其他"
   ],
   "profile": {
