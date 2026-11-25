@@ -5,6 +5,8 @@ from pathlib import Path
 import re
 from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
+from urllib.error import HTTPError
 import yaml
 
 spec = importlib.util.spec_from_file_location('sync', Path(__file__).resolve().parents[1] / 'scripts/sync_configs.py')
@@ -28,30 +30,34 @@ class ConversionTests(unittest.TestCase):
         self.assertFalse(re.search(pattern, '日本 01'))
         self.assertIn('timeout=5,', line)
 
-    def test_full_configuration_has_no_geosite_dependencies(self):
+    def test_full_configuration_preserves_policy_and_order(self):
         config = yaml.safe_load((sync.ROOT / 'Merge.yaml').read_text(encoding='utf-8'))
         mapping = json.loads((sync.ROOT / 'scripts/shadowrocket-rule-map.json').read_text(encoding='utf-8'))
         policies = {g['name'] for g in config['proxy-groups']} | {'DIRECT', 'REJECT', 'PROXY'}
         report = self.report()
-        rows = sync.render_rules(config, mapping, policies, report)
+        categories = sync.geosite_categories(config) - mapping.keys()
+        sources = {category: (f'https://test.test/{category}.list', 'DOMAIN,example.org\n')
+                   for category in categories}
+        rows = sync.render_rules(config, mapping, policies, report, geosite_sources=sources)
         text = '\n'.join(rows)
-        self.assertNotIn('MetaCubeX', text)
         self.assertNotIn('GEOSITE,', text)
         self.assertNotIn('DOMAIN-REGEX,', text)
         self.assertTrue(all(x['rule'].startswith('PROCESS-NAME,') for x in report['skipped_rules']))
         self.assertEqual(rows[-1], 'FINAL,🐟 其他')
-        self.assertLess(text.index('/YouTube/'), text.index('/Google/'))
+
+        def position(category, policy):
+            return rows.index(f'RULE-SET,{sources[category][0]},{policy}')
+
+        google = position('google', '🌐 Google')
+        self.assertLess(position('youtube', '🎬 流媒体'), google)
         academic_path = sync.ROOT / 'rules/AcademicTools.yaml'
         academic_data = academic_path.read_bytes()
         tools = yaml.safe_load(academic_data)['payload']
         expected = [f'{rule},📚 科研工具' for rule in tools]
         start = rows.index(expected[0])
         self.assertEqual(rows[start:start + len(expected)], expected)
-        scholar = next(
-            i for i, row in enumerate(rows)
-            if row.endswith('/GlobalScholar/GlobalScholar.list,📖 学术资源')
-        )
-        self.assertLess(text.index('/Google/'), text.index(expected[0]))
+        scholar = position('category-scholar-!cn', '📖 学术资源')
+        self.assertLess(google, start)
         self.assertLess(start + len(expected) - 1, scholar)
         self.assertIn({
             'category': 'rule-set:academic-tools',
@@ -60,10 +66,10 @@ class ConversionTests(unittest.TestCase):
             'source_rule_count': len(tools),
             'source_sha256': hashlib.sha256(academic_data).hexdigest(),
         }, report['rule_replacements'])
-        self.assertLess(text.index('DOMAIN-SUFFIX,jetbrains.com.cn,DIRECT'), text.index('/Developer/'))
-        self.assertLess(text.index('DOMAIN,copilot-proxy.githubusercontent.com,💻 软件开发'), text.index('/GitHub/'))
-        self.assertLess(text.index('/SteamCN/'), text.index('/Game/'))
-        self.assertLess(text.index('/OpenAI/'), text.index('/Microsoft/'))
+        self.assertLess(position('category-dev@cn', 'DIRECT'), position('category-dev', '💻 软件开发'))
+        self.assertLess(position('github-copilot', '💻 软件开发'), position('github', '💻 软件开发'))
+        self.assertLess(position('category-games@cn', 'DIRECT'), position('category-games-!cn', '🎮 游戏平台'))
+        self.assertLess(position('category-ai-!cn', '🤖 人工智能'), position('microsoft', 'Ⓜ️ Microsoft'))
         self.assertEqual(text.count('RULE-SET,https://anti-ad.net/surge.txt,REJECT'), 1)
 
     def test_local_provider_rejects_invalid_payloads(self):
@@ -99,9 +105,54 @@ class ConversionTests(unittest.TestCase):
         self.assertEqual(rows, ['DOMAIN,first.test,DIRECT', 'RULE-SET,https://test.test/a.list,AI',
             'RULE-SET,https://test.test/b.list,AI', 'DOMAIN-SUFFIX,supplement.test,AI', 'FINAL,DIRECT'])
 
-    def test_unknown_category_fails_instead_of_disappearing(self):
-        with self.assertRaises(ValueError):
-            sync.render_rules({'rules': ['GEOSITE,new,DIRECT', 'MATCH,DIRECT']}, {}, {'DIRECT'}, self.report())
+    def test_new_category_uses_same_name_at_validated_revision(self):
+        config = {'rules': ['GEOSITE,new@cn,DIRECT', 'MATCH,DIRECT']}
+        revision = 'a' * 40
+        url = f'{sync.RAW}/{sync.METACUBEX_REPO}/{revision}/geo/geosite/classical/new@cn.list'
+        with patch.object(sync, 'fetch', side_effect={
+            sync.METACUBEX_META_HEAD: json.dumps({'sha': revision}),
+            url: 'DOMAIN,example.org\n',
+        }.__getitem__):
+            sources = sync.load_geosite_sources(config, {})
+        report = self.report()
+        rows = sync.render_rules(config, {}, {'DIRECT'}, report, geosite_sources=sources)
+        self.assertEqual(rows, [f'RULE-SET,{url},DIRECT', 'FINAL,DIRECT'])
+        self.assertEqual(report['rule_replacements'][0]['source_rule_count'], 1)
+
+    def test_mixed_geosite_keeps_rules_expands_finite_regex_and_reports_other_regex(self):
+        config = {'rules': ['GEOSITE,new,DIRECT', 'MATCH,REJECT']}
+        omitted = r'DOMAIN-REGEX,^cdn\d+\.example\.org$'
+        expanded = r'DOMAIN-REGEX,^api[1-2]?\.example\.org$'
+        body = '\n'.join(['DOMAIN-SUFFIX,a.example.org', expanded, omitted, 'DOMAIN,other.example.org'])
+        report = self.report()
+        rows = sync.render_rules(config, {}, {'DIRECT', 'REJECT'}, report,
+                                 geosite_sources={'new': ('https://test.test/new.list', body)})
+        self.assertEqual(rows, [
+            'DOMAIN-SUFFIX,a.example.org,DIRECT', 'DOMAIN,api.example.org,DIRECT',
+            'DOMAIN,api1.example.org,DIRECT', 'DOMAIN,api2.example.org,DIRECT',
+            'DOMAIN,other.example.org,DIRECT', 'FINAL,REJECT',
+        ])
+        source = report['rule_replacements'][0]
+        self.assertEqual(source['omitted_domain_regex'], [omitted])
+        self.assertEqual(source['expanded_domain_regex'], [{'rule': expanded, 'generated_domain_count': 3}])
+        self.assertEqual(sync.expand_domain_regex(r'^api\d\d\d\.example\.org$'), [])
+
+    def test_missing_or_unusable_geosite_leaves_generated_files_intact(self):
+        with TemporaryDirectory() as workdir:
+            root = Path(workdir)
+            (root / 'scripts').mkdir()
+            (root / 'scripts/shadowrocket-rule-map.json').write_text('{}')
+            (root / 'Merge.yaml').write_text('proxy-groups: []\nrules: ["GEOSITE,new,DIRECT", "MATCH,DIRECT"]\n')
+            targets = [root / name for name in ('Merge.json', 'Shadowrocket.conf', 'conversion-report.json')]
+            for path in targets:
+                path.write_text('previous version')
+            for upstream in (HTTPError('https://test.test/new.list', 404, 'Not Found', {}, None),
+                             r'DOMAIN-REGEX,^api\d+\.example\.org$'):
+                with self.subTest(upstream=upstream), patch.object(sync, 'ROOT', root), patch.object(
+                    sync, 'fetch', side_effect=[json.dumps({'sha': 'a' * 40}), upstream],
+                ), self.assertRaisesRegex(ValueError, 'GEOSITE new'):
+                    sync.build()
+                self.assertTrue(all(path.read_text() == 'previous version' for path in targets))
 
     def test_unknown_rule_type_fails(self):
         with self.assertRaises(ValueError):
