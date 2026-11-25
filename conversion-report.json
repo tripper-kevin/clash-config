@@ -1,5 +1,5 @@
 {
-  "source_sha256": "38a5582040a7aa7c0de7a31ec58c381774055a76de73a061243eb18973b1f7f2",
+  "source_sha256": "00381a616214eb09002432e55d14c2d560b500d752111831970d01057c39d715",
   "skipped_rules": [
     {
       "rule": "PROCESS-NAME,Antigravity.exe,🌐 Google",
@@ -498,6 +498,15 @@
       ],
       "rules": [],
       "note": "保留现有精简规则集。完整版 GeoSite CN 超过 11 万条。"
+    },
+    {
+      "category": "geoip:telegram",
+      "policy": "💬 通信社交",
+      "urls": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
+      ],
+      "rules": [],
+      "note": "用 Telegram 完整规则替代 IP 分类，统一交给社交分组。"
     }
   ],
   "checked_sources": [
@@ -650,6 +659,11 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list",
       "checked_rule_count": 142,
       "checked_sha256": "79c3b96f8064bf1b53678fb0dc7d9e92d74c729869fe8dc494afa2e9b12e2856"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list",
+      "checked_rule_count": 40,
+      "checked_sha256": "09f093cce5b3e2994147a2640e03040aac75e1db7bf2103fd1c9a2509b0176ab"
     }
   ],
   "notes": [
