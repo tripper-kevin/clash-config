@@ -171,8 +171,8 @@
       "category": "rule-set:academic-tools",
       "policy": "📚 科研工具",
       "source_path": "rules/AcademicTools.yaml",
-      "source_rule_count": 23,
-      "source_sha256": "a29656aa9339ce38a3334d94b481ef1b49467243b2af4affa543e654d32e09e3"
+      "source_rule_count": 22,
+      "source_sha256": "3a2d6c653905349fb0c754e619d35767b24269492c62b072ea6bc664adcd2b41"
     },
     {
       "category": "category-scholar-!cn",
