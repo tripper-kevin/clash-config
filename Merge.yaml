@@ -299,10 +299,10 @@ rules:
 
   # 10 国内通用
   - GEOSITE,cn,DIRECT
-  - GEOIP,CN,DIRECT,no-resolve
 
   # 11 IP规则
   - GEOIP,telegram,💬 通信社交,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
 
   # 12 最终兜底
   - MATCH,🐟 其他
