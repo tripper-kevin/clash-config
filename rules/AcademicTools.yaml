@@ -1,6 +1,5 @@
 payload:
   # 文献管理
-  - DOMAIN-SUFFIX,zotero.org
   - DOMAIN-SUFFIX,mendeley.com
   - DOMAIN-SUFFIX,endnote.com
   - DOMAIN-SUFFIX,paperpile.com
