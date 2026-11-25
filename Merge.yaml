@@ -39,17 +39,18 @@ dns:
   use-system-hosts: true
   ipv6: true
   fake-ip-filter:
-    - '*.lan'
-    - '*.local'
-    - '*.localhost'
-    - '*.arpa'
-    - time.*.com
-    - ntp.*.com
-    - +.msftconnecttest.com
-    - +.msftncsi.com
-    - +.tsinghua.edu.cn
-    - +.qq.com
-    - rule-set:anti-ad
+    - '+.lan'
+    - '+.local'
+    - '+.localhost'
+    - '+.arpa'
+    - 'time.*.com'
+    - 'ntp.*.com'
+    - '+.msftconnecttest.com'
+    - '+.msftncsi.com'
+    - '+.tsinghua.edu.cn'
+    - '+.qq.com'
+    # 跳过 Fake IP，让下方 DNS 策略对广告域名返回 NXDOMAIN。
+    - 'rule-set:anti-ad'
   default-nameserver:
     - system
   nameserver:
@@ -66,15 +67,15 @@ proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
-      - ⚡ 自动选择
       - 🔄 故障转移
     include-all: true
     exclude-type: direct
-    exclude-filter: &exclude (?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\s*0\.\d+|0\.\d+\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\s*[:：]?\s*0\.\d+)
+    exclude-filter: &exclude '(?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\s*0\.\d+|(?:^|[^\d.])0\.\d+\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\s*[:：]?\s*0\.\d+)'
 
   # 业务策略组
   - name: 🤖 人工智能
     type: select
+    default-selected: 🇸🇬 新加坡
     proxies:
       - 🇨🇳 台湾
       - 🇯🇵 日本
@@ -83,6 +84,7 @@ proxy-groups:
       - 🚀 节点选择
   - name: 💻 软件开发
     type: select
+    default-selected: 🇸🇬 新加坡
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -92,6 +94,7 @@ proxy-groups:
       - 🚀 节点选择
   - name: 💬 通信社交
     type: select
+    default-selected: 🇭🇰 香港
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -101,6 +104,7 @@ proxy-groups:
       - 🚀 节点选择
   - name: 🎬 流媒体
     type: select
+    default-selected: 🇭🇰 香港
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -110,6 +114,7 @@ proxy-groups:
       - 🚀 节点选择
   - name: 📖 学术资源
     type: select
+    default-selected: DIRECT
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -120,6 +125,7 @@ proxy-groups:
       - DIRECT
   - name: 📚 科研工具
     type: select
+    default-selected: 🇸🇬 新加坡
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -129,6 +135,7 @@ proxy-groups:
       - 🚀 节点选择
   - name: 🎮 游戏平台
     type: select
+    default-selected: 🇭🇰 香港
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -139,6 +146,7 @@ proxy-groups:
       - DIRECT
   - name: 🌐 Google
     type: select
+    default-selected: 🇸🇬 新加坡
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -148,6 +156,7 @@ proxy-groups:
       - 🚀 节点选择
   - name: 🍎 Apple
     type: select
+    default-selected: DIRECT
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -158,6 +167,7 @@ proxy-groups:
       - DIRECT
   - name: Ⓜ️ Microsoft
     type: select
+    default-selected: DIRECT
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -168,6 +178,7 @@ proxy-groups:
       - DIRECT
   - name: 🐟 其他
     type: select
+    default-selected: DIRECT
     proxies:
       - 🇭🇰 香港
       - 🇨🇳 台湾
@@ -208,13 +219,6 @@ proxy-groups:
   - name: 🇺🇸 美国
     <<: *auto
     filter: (?i)(美国|美國|🇺🇸|\bUS\b|\bUSA\b|United ?States|Los ?Angeles|San ?Jose|Seattle|Dallas|New ?York|Chicago|Ashburn)
-
-  # 全局自动选择
-  - name: ⚡ 自动选择
-    <<: *auto
-    # 按节点名称纳入香港、台湾、日本、新加坡。
-    filter: (?i)(香港|🇭🇰|\bHK\b|Hong ?Kong|HKT|台湾|台灣|臺灣|台北|臺北|高雄|🇹🇼|\bTW\b|Taiwan|Taipei|Kaohsiung|日本|🇯🇵|\bJP\b|Japan|Tokyo|Osaka|Saitama|Nagoya|新加坡|狮城|獅城|🇸🇬|\bSG\b|Singapore)
-    hidden: true
 
   # 故障转移
   - name: 🔄 故障转移
