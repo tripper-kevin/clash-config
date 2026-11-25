@@ -73,7 +73,6 @@ proxy-groups:
     exclude-filter: &exclude (?i)(流量|剩余|到期|过期|套餐|订阅|官网|公告|客服|群组|网址|更新|重置|重启|维护|工单|邮箱|低倍率|[|｜]\s*0\.\d+|0\.\d+\s*(?:倍(?:率)?|[x×])|(?:倍(?:率)?|[x×])\s*[:：]?\s*0\.\d+)
 
   # 业务策略组
-
   - name: 🤖 人工智能
     type: select
     proxies:
@@ -91,7 +90,6 @@ proxy-groups:
       - 🇸🇬 新加坡
       - 🇺🇸 美国
       - 🚀 节点选择
-
   - name: 💬 通信社交
     type: select
     proxies:
@@ -101,7 +99,6 @@ proxy-groups:
       - 🇸🇬 新加坡
       - 🇺🇸 美国
       - 🚀 节点选择
-
   - name: 🎬 流媒体
     type: select
     proxies:
@@ -121,7 +118,6 @@ proxy-groups:
       - 🇺🇸 美国
       - 🚀 节点选择
       - DIRECT
-
   - name: 📚 科研工具
     type: select
     proxies:
@@ -131,7 +127,6 @@ proxy-groups:
       - 🇸🇬 新加坡
       - 🇺🇸 美国
       - 🚀 节点选择
-
   - name: 🎮 游戏平台
     type: select
     proxies:
@@ -151,7 +146,6 @@ proxy-groups:
       - 🇸🇬 新加坡
       - 🇺🇸 美国
       - 🚀 节点选择
-
   - name: 🍎 Apple
     type: select
     proxies:
@@ -162,7 +156,6 @@ proxy-groups:
       - 🇺🇸 美国
       - 🚀 节点选择
       - DIRECT
-
   - name: Ⓜ️ Microsoft
     type: select
     proxies:
