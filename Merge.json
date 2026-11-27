@@ -53,6 +53,8 @@
       "+.msftncsi.com",
       "+.tsinghua.edu.cn",
       "+.qq.com",
+      "+.huggingface.co",
+      "+.hf.co",
       "rule-set:anti-ad"
     ],
     "default-nameserver": [

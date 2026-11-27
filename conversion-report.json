@@ -1,5 +1,5 @@
 {
-  "source_sha256": "836ac8d348f5956dba3fcaf8b1d3598f0858efc0df76c980591a7d09421d4b1f",
+  "source_sha256": "02014d16f04e47f18a67123a41fd48e86b61074fde2fd07fc6d8bcae19cfdaea",
   "skipped_rules": [],
   "group_differences": [
     {
@@ -71,7 +71,7 @@
     {
       "category": "private",
       "policy": "DIRECT",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/private.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/private.list",
       "source_rule_count": 133,
       "source_sha256": "01fbefdf20585ec8fde7747f4f9b8edcf5d76c55d39eb35b082021b57af6cff4",
       "expanded_domain_regex": [],
@@ -102,7 +102,7 @@
     {
       "category": "youtube",
       "policy": "🎬 流媒体",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/youtube.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/youtube.list",
       "source_rule_count": 178,
       "source_sha256": "b50b8cabe440d8b3a4c0e7385e2a9ac59a77ba784a2e150f1d3aebd94790149f",
       "expanded_domain_regex": [],
@@ -112,9 +112,9 @@
     {
       "category": "google",
       "policy": "🌐 Google",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/google.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/google.list",
       "source_rule_count": 1081,
-      "source_sha256": "3bc2aa16cb52cf25eb83df305437c7f95b4e7190a623289eb3db3955850170bb",
+      "source_sha256": "de811ba3be27e4caeef53794d3fcbcc4e427ff5762b7a7614e134c93d6468a4e",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [
         "DOMAIN-REGEX,^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$",
@@ -125,7 +125,7 @@
     {
       "category": "wikimedia",
       "policy": "📚 科研工具",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/wikimedia.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/wikimedia.list",
       "source_rule_count": 18,
       "source_sha256": "737903fdc0f01d291c7d557224ff15912c40be15f193bb8000ca3a575fab6f2f",
       "expanded_domain_regex": [],
@@ -135,7 +135,7 @@
     {
       "category": "sci-hub",
       "policy": "📚 科研工具",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/sci-hub.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/sci-hub.list",
       "source_rule_count": 6,
       "source_sha256": "9fc4a9f817c1ca0bb2e7a1cda60f58f300f87a96aa840a1d6c1490791542b8dc",
       "expanded_domain_regex": [],
@@ -145,7 +145,7 @@
     {
       "category": "z-library",
       "policy": "📚 科研工具",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/z-library.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/z-library.list",
       "source_rule_count": 48,
       "source_sha256": "cd976a0f8340792f2f84e5a8b7a456251884a42e27dd72fb71ce74510b4be81d",
       "expanded_domain_regex": [],
@@ -162,9 +162,9 @@
     {
       "category": "category-scholar-cn",
       "policy": "DIRECT",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-scholar-cn.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-scholar-cn.list",
       "source_rule_count": 96,
-      "source_sha256": "fb4b9ed5def99f647a90dc3063f361685d228d794debd34856e6c6f7d85485d0",
+      "source_sha256": "56dcd19e6408306cbf10df1ed114abf378a98e8d17ce671f6aa3ac717dfe644e",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [],
       "rendered_as": "remote"
@@ -172,9 +172,9 @@
     {
       "category": "category-scholar-!cn",
       "policy": "📖 学术资源",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-scholar-!cn.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-scholar-!cn.list",
       "source_rule_count": 466,
-      "source_sha256": "b93de48b0486488bf104a3a508132a5fcc56517ea678ddf6892d710359de3020",
+      "source_sha256": "c61abb5acaf921bdffc2f3ddefdf0a5bc04a1a969e5e98a8d11758b5032096ad",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [],
       "rendered_as": "remote"
@@ -182,9 +182,9 @@
     {
       "category": "category-dev@cn",
       "policy": "DIRECT",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-dev@cn.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-dev@cn.list",
       "source_rule_count": 25,
-      "source_sha256": "605d51a33094f63f0d637c94619cdd7e68e09a9389747760b841a008de755b01",
+      "source_sha256": "15f11606f64e156bb7e1ea16fd28fb5a3f96ecb04b6bb06237da5ebd0bbe15d1",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [],
       "rendered_as": "remote"
@@ -192,7 +192,7 @@
     {
       "category": "github-copilot",
       "policy": "💻 软件开发",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/github-copilot.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/github-copilot.list",
       "source_rule_count": 7,
       "source_sha256": "82cff56efce3901f4419170138147d38dcade3008bcbf5922da8650194d268ba",
       "expanded_domain_regex": [],
@@ -202,7 +202,7 @@
     {
       "category": "cursor",
       "policy": "💻 软件开发",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/cursor.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/cursor.list",
       "source_rule_count": 5,
       "source_sha256": "163435ec43226a0b8a9322048cd132fc65ae20dc4de7a0bcb3b43d87f32e393c",
       "expanded_domain_regex": [],
@@ -212,7 +212,7 @@
     {
       "category": "github",
       "policy": "💻 软件开发",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/github.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/github.list",
       "source_rule_count": 66,
       "source_sha256": "2a19cc9b1611a620fff70ab59102b41e222d914c5d16ddb1cb92d72d10c1dc05",
       "expanded_domain_regex": [],
@@ -222,7 +222,7 @@
     {
       "category": "huggingface",
       "policy": "💻 软件开发",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/huggingface.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/huggingface.list",
       "source_rule_count": 3,
       "source_sha256": "9329736e7337a7b831221378d0b81386362bd6b55db4e650dc57ddcfc3af4492",
       "expanded_domain_regex": [],
@@ -232,7 +232,7 @@
     {
       "category": "atlassian",
       "policy": "💻 软件开发",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/atlassian.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/atlassian.list",
       "source_rule_count": 11,
       "source_sha256": "8edec0aa24eba0379fe7de550a52ab268bf7be1281964b40c5a41c14ce60b273",
       "expanded_domain_regex": [],
@@ -242,7 +242,7 @@
     {
       "category": "sourceforge",
       "policy": "💻 软件开发",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/sourceforge.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/sourceforge.list",
       "source_rule_count": 4,
       "source_sha256": "fb1c0275b0ecc341125687c3d3dea73d006f847ccb463fdc1a9d3167496171f2",
       "expanded_domain_regex": [],
@@ -252,9 +252,9 @@
     {
       "category": "category-dev",
       "policy": "💻 软件开发",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-dev.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-dev.list",
       "source_rule_count": 702,
-      "source_sha256": "7bbf4b6ae182a1defcd0837b2e9edc07dad8df9f3db47a664fe50d2001a93d29",
+      "source_sha256": "797ffff5dff5f25ee76fabf350dc2278529b2b7ebd8967bfd6f6f1cf5a4837ed",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [
         "DOMAIN-REGEX,.+\\.dkr\\.ecr\\.[^\\.]+\\.amazonaws\\.com$"
@@ -264,9 +264,9 @@
     {
       "category": "category-ai-!cn",
       "policy": "🤖 人工智能",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-ai-!cn.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-ai-!cn.list",
       "source_rule_count": 220,
-      "source_sha256": "48159ad7b05548272317b5bdc40b6941f0f9467e9858fbbffa783754501cc752",
+      "source_sha256": "0fd58e8c6eb919ad510de067df06e24215e546116a63b5427ccbea6d07a0fb2d",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [
         "DOMAIN-REGEX,^chatgpt-async-webps-prod-\\S+-\\d+\\.webpubsub\\.azure\\.com$"
@@ -276,23 +276,23 @@
     {
       "category": "category-games@cn",
       "policy": "DIRECT",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-games@cn.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-games@cn.list",
       "source_rule_count": 40,
-      "source_sha256": "d34834c86052266cc2fa48346fc612f4e32ab6b1e0c0767a21e584079b6f6491",
+      "source_sha256": "3d0e07e36088ae8c311f62d9a55be393d8775302149462a5ef503bfc9113b950",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [
-        "DOMAIN-REGEX,^.+-mihayo\\.akamaized\\.net$",
         "DOMAIN-REGEX,^cdn\\d-epicgames-\\d+\\.file\\.myqcloud\\.com$",
-        "DOMAIN-REGEX,^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$"
+        "DOMAIN-REGEX,^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$",
+        "DOMAIN-REGEX,^.+-mihayo\\.akamaized\\.net$"
       ],
       "rendered_as": "inline"
     },
     {
       "category": "category-games-!cn",
       "policy": "🎮 游戏平台",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-games-!cn.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-games-!cn.list",
       "source_rule_count": 885,
-      "source_sha256": "0221ea7aa773556db4a0979787431a81110c28ca2bf73d78d95cbd66c9179dbf",
+      "source_sha256": "cf6da20961e88290b3a2f037509d01a7ac8b493dfcc1794cd7e782389c8e10ed",
       "expanded_domain_regex": [
         {
           "rule": "DOMAIN-REGEX,^epicgames-download\\d\\.akamaized\\.net$",
@@ -308,7 +308,7 @@
     {
       "category": "netflix",
       "policy": "🎬 流媒体",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/netflix.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/netflix.list",
       "source_rule_count": 28,
       "source_sha256": "6b76f4f391dd5beefb316383c65a2c587ff2ee8ace61e49106dab438d3ab9344",
       "expanded_domain_regex": [],
@@ -323,7 +323,7 @@
     {
       "category": "disney@cn",
       "policy": "DIRECT",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/disney@cn.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/disney@cn.list",
       "source_rule_count": 1,
       "source_sha256": "2108e0273747948d00ecb7d2a709c66e9f079e2ab54b9394cd87ba5bd833f354",
       "expanded_domain_regex": [],
@@ -333,9 +333,9 @@
     {
       "category": "disney",
       "policy": "🎬 流媒体",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/disney.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/disney.list",
       "source_rule_count": 225,
-      "source_sha256": "0f08a243aa830f40ac3e619c5281483151f015bebeacb6b1460ec73a5f98ce0a",
+      "source_sha256": "65fc84b826adb95bc3f5290a8c5e6b252868885fa62da213f84ec243d2be13f1",
       "expanded_domain_regex": [
         {
           "rule": "DOMAIN-REGEX,^hses[1-7]?\\.akamaized\\.net$",
@@ -348,7 +348,7 @@
     {
       "category": "hbo",
       "policy": "🎬 流媒体",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/hbo.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/hbo.list",
       "source_rule_count": 65,
       "source_sha256": "3cbd25bb79ead6650d405c5446a99ed9ad75f4410afdc92b700383c1c72ce8ca",
       "expanded_domain_regex": [],
@@ -358,7 +358,7 @@
     {
       "category": "primevideo@cn",
       "policy": "DIRECT",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/primevideo@cn.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/primevideo@cn.list",
       "source_rule_count": 2,
       "source_sha256": "b59acf6954ef675b90423069976e2999ed389609e0b2d3c8a65f27fb34e745f8",
       "expanded_domain_regex": [],
@@ -368,7 +368,7 @@
     {
       "category": "primevideo",
       "policy": "🎬 流媒体",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/primevideo.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/primevideo.list",
       "source_rule_count": 24,
       "source_sha256": "15fb0ea895aafd16dba4e1e9abbb0af3d4991a6047839023948203ee686dde03",
       "expanded_domain_regex": [],
@@ -378,7 +378,7 @@
     {
       "category": "tiktok",
       "policy": "🎬 流媒体",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/tiktok.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/tiktok.list",
       "source_rule_count": 40,
       "source_sha256": "ee758feb97468bfeb83cd0fceca9983f815021042972757850bffd2e2523f740",
       "expanded_domain_regex": [],
@@ -388,7 +388,7 @@
     {
       "category": "bahamut",
       "policy": "🎬 流媒体",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/bahamut.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/bahamut.list",
       "source_rule_count": 5,
       "source_sha256": "0fa7f47fa90a746299cda7828e21bc8c75720f8074300d94ea117b7883cbd720",
       "expanded_domain_regex": [],
@@ -398,7 +398,7 @@
     {
       "category": "spotify",
       "policy": "🎬 流媒体",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/spotify.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/spotify.list",
       "source_rule_count": 28,
       "source_sha256": "75fdf65b60e757064eb8d86026ca863b7341af62f58454493f858138a91ce150",
       "expanded_domain_regex": [],
@@ -408,7 +408,7 @@
     {
       "category": "twitch",
       "policy": "🎬 流媒体",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/twitch.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/twitch.list",
       "source_rule_count": 35,
       "source_sha256": "93f217574cdb9788a7af1b4adeba7fcb7ce59f750be28ee289e7f2e3ce9c8434",
       "expanded_domain_regex": [],
@@ -418,7 +418,7 @@
     {
       "category": "reddit",
       "policy": "💬 通信社交",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/reddit.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/reddit.list",
       "source_rule_count": 12,
       "source_sha256": "395021fcfc2d8280f32fa56aa89248440b8088eef3e7b8bc732e59638093fc27",
       "expanded_domain_regex": [],
@@ -428,7 +428,7 @@
     {
       "category": "pinterest",
       "policy": "💬 通信社交",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/pinterest.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/pinterest.list",
       "source_rule_count": 52,
       "source_sha256": "18602e9ce915ca656b9e57dda3dbf64e5242c675cfb83d3782e14b09a71fcfc3",
       "expanded_domain_regex": [],
@@ -438,7 +438,7 @@
     {
       "category": "snap",
       "policy": "💬 通信社交",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/snap.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/snap.list",
       "source_rule_count": 9,
       "source_sha256": "996b5b5db58f810697f04279b8317a6882ae8bd128c9d829ad24812723bea62a",
       "expanded_domain_regex": [],
@@ -448,9 +448,9 @@
     {
       "category": "category-social-media-!cn",
       "policy": "💬 通信社交",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-social-media-!cn.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-social-media-!cn.list",
       "source_rule_count": 627,
-      "source_sha256": "74e469f054ee9c166799f80610c6200c2daa94296968f6d9d4a2c5df7074939d",
+      "source_sha256": "02077da628ac0e2efa82b34be57fb385487f68536e427553e431bf098ae70d1e",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [],
       "rendered_as": "remote"
@@ -458,9 +458,9 @@
     {
       "category": "category-communication",
       "policy": "💬 通信社交",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-communication.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-communication.list",
       "source_rule_count": 160,
-      "source_sha256": "b9d9f94c5f3547f855b025c341cb7f26418bd25bd2fc25c3bc47c7108b3429d5",
+      "source_sha256": "04224aa0f774b122e09878e62b8eac8199bafc5240905eb2b17a6680db0d49da",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [],
       "rendered_as": "remote"
@@ -468,9 +468,9 @@
     {
       "category": "microsoft",
       "policy": "Ⓜ️ Microsoft",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/microsoft.list",
-      "source_rule_count": 762,
-      "source_sha256": "eddce3d6cef035546090e6c7ac4ce9574c71849a80defec7aed4c785cb4659c4",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/microsoft.list",
+      "source_rule_count": 763,
+      "source_sha256": "f46fba5d4206862123c6b2ed334c5837b4491544664a16dbea20ef55a8830a00",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [],
       "rendered_as": "remote"
@@ -478,9 +478,9 @@
     {
       "category": "apple",
       "policy": "🍎 Apple",
-      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/apple.list",
+      "source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/apple.list",
       "source_rule_count": 1668,
-      "source_sha256": "748ee17030505d8544e2038afc67d5c0ef68cb3c6b72783526897993e46f0c7a",
+      "source_sha256": "e7a05de60f60bdca8ab06ac8812b293a5bcb963f44e66738577187d7eaf00d1e",
       "expanded_domain_regex": [],
       "omitted_domain_regex": [],
       "rendered_as": "remote"
@@ -507,146 +507,146 @@
   "checked_sources": [
     {
       "url": "https://anti-ad.net/surge.txt",
-      "checked_rule_count": 103309,
-      "checked_sha256": "ca861f460fca2f01bdaddb0fd193445996af505ea6cda020b8c5d3644d947e21"
+      "checked_rule_count": 102599,
+      "checked_sha256": "5d725e7aaba378e6c3849508f4b61206c546e54bb2e1abe11c88eaf1ec30a938"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/apple.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/apple.list",
       "checked_rule_count": 1668,
-      "checked_sha256": "748ee17030505d8544e2038afc67d5c0ef68cb3c6b72783526897993e46f0c7a"
+      "checked_sha256": "e7a05de60f60bdca8ab06ac8812b293a5bcb963f44e66738577187d7eaf00d1e"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/atlassian.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/atlassian.list",
       "checked_rule_count": 11,
       "checked_sha256": "8edec0aa24eba0379fe7de550a52ab268bf7be1281964b40c5a41c14ce60b273"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/bahamut.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/bahamut.list",
       "checked_rule_count": 5,
       "checked_sha256": "0fa7f47fa90a746299cda7828e21bc8c75720f8074300d94ea117b7883cbd720"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-communication.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-communication.list",
       "checked_rule_count": 160,
-      "checked_sha256": "b9d9f94c5f3547f855b025c341cb7f26418bd25bd2fc25c3bc47c7108b3429d5"
+      "checked_sha256": "04224aa0f774b122e09878e62b8eac8199bafc5240905eb2b17a6680db0d49da"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-dev@cn.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-dev@cn.list",
       "checked_rule_count": 25,
-      "checked_sha256": "605d51a33094f63f0d637c94619cdd7e68e09a9389747760b841a008de755b01"
+      "checked_sha256": "15f11606f64e156bb7e1ea16fd28fb5a3f96ecb04b6bb06237da5ebd0bbe15d1"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-scholar-!cn.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-scholar-!cn.list",
       "checked_rule_count": 466,
-      "checked_sha256": "b93de48b0486488bf104a3a508132a5fcc56517ea678ddf6892d710359de3020"
+      "checked_sha256": "c61abb5acaf921bdffc2f3ddefdf0a5bc04a1a969e5e98a8d11758b5032096ad"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-scholar-cn.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-scholar-cn.list",
       "checked_rule_count": 96,
-      "checked_sha256": "fb4b9ed5def99f647a90dc3063f361685d228d794debd34856e6c6f7d85485d0"
+      "checked_sha256": "56dcd19e6408306cbf10df1ed114abf378a98e8d17ce671f6aa3ac717dfe644e"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/category-social-media-!cn.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/category-social-media-!cn.list",
       "checked_rule_count": 627,
-      "checked_sha256": "74e469f054ee9c166799f80610c6200c2daa94296968f6d9d4a2c5df7074939d"
+      "checked_sha256": "02077da628ac0e2efa82b34be57fb385487f68536e427553e431bf098ae70d1e"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/cursor.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/cursor.list",
       "checked_rule_count": 5,
       "checked_sha256": "163435ec43226a0b8a9322048cd132fc65ae20dc4de7a0bcb3b43d87f32e393c"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/disney@cn.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/disney@cn.list",
       "checked_rule_count": 1,
       "checked_sha256": "2108e0273747948d00ecb7d2a709c66e9f079e2ab54b9394cd87ba5bd833f354"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/github-copilot.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/github-copilot.list",
       "checked_rule_count": 7,
       "checked_sha256": "82cff56efce3901f4419170138147d38dcade3008bcbf5922da8650194d268ba"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/github.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/github.list",
       "checked_rule_count": 66,
       "checked_sha256": "2a19cc9b1611a620fff70ab59102b41e222d914c5d16ddb1cb92d72d10c1dc05"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/hbo.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/hbo.list",
       "checked_rule_count": 65,
       "checked_sha256": "3cbd25bb79ead6650d405c5446a99ed9ad75f4410afdc92b700383c1c72ce8ca"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/huggingface.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/huggingface.list",
       "checked_rule_count": 3,
       "checked_sha256": "9329736e7337a7b831221378d0b81386362bd6b55db4e650dc57ddcfc3af4492"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/microsoft.list",
-      "checked_rule_count": 762,
-      "checked_sha256": "eddce3d6cef035546090e6c7ac4ce9574c71849a80defec7aed4c785cb4659c4"
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/microsoft.list",
+      "checked_rule_count": 763,
+      "checked_sha256": "f46fba5d4206862123c6b2ed334c5837b4491544664a16dbea20ef55a8830a00"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/pinterest.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/pinterest.list",
       "checked_rule_count": 52,
       "checked_sha256": "18602e9ce915ca656b9e57dda3dbf64e5242c675cfb83d3782e14b09a71fcfc3"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/primevideo.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/primevideo.list",
       "checked_rule_count": 24,
       "checked_sha256": "15fb0ea895aafd16dba4e1e9abbb0af3d4991a6047839023948203ee686dde03"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/primevideo@cn.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/primevideo@cn.list",
       "checked_rule_count": 2,
       "checked_sha256": "b59acf6954ef675b90423069976e2999ed389609e0b2d3c8a65f27fb34e745f8"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/reddit.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/reddit.list",
       "checked_rule_count": 12,
       "checked_sha256": "395021fcfc2d8280f32fa56aa89248440b8088eef3e7b8bc732e59638093fc27"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/sci-hub.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/sci-hub.list",
       "checked_rule_count": 6,
       "checked_sha256": "9fc4a9f817c1ca0bb2e7a1cda60f58f300f87a96aa840a1d6c1490791542b8dc"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/snap.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/snap.list",
       "checked_rule_count": 9,
       "checked_sha256": "996b5b5db58f810697f04279b8317a6882ae8bd128c9d829ad24812723bea62a"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/sourceforge.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/sourceforge.list",
       "checked_rule_count": 4,
       "checked_sha256": "fb1c0275b0ecc341125687c3d3dea73d006f847ccb463fdc1a9d3167496171f2"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/spotify.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/spotify.list",
       "checked_rule_count": 28,
       "checked_sha256": "75fdf65b60e757064eb8d86026ca863b7341af62f58454493f858138a91ce150"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/tiktok.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/tiktok.list",
       "checked_rule_count": 40,
       "checked_sha256": "ee758feb97468bfeb83cd0fceca9983f815021042972757850bffd2e2523f740"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/twitch.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/twitch.list",
       "checked_rule_count": 35,
       "checked_sha256": "93f217574cdb9788a7af1b4adeba7fcb7ce59f750be28ee289e7f2e3ce9c8434"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/wikimedia.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/wikimedia.list",
       "checked_rule_count": 18,
       "checked_sha256": "737903fdc0f01d291c7d557224ff15912c40be15f193bb8000ca3a575fab6f2f"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/youtube.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/youtube.list",
       "checked_rule_count": 178,
       "checked_sha256": "b50b8cabe440d8b3a4c0e7385e2a9ac59a77ba784a2e150f1d3aebd94790149f"
     },
     {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/classical/z-library.list",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/classical/z-library.list",
       "checked_rule_count": 48,
       "checked_sha256": "cd976a0f8340792f2f84e5a8b7a456251884a42e27dd72fb71ce74510b4be81d"
     },
