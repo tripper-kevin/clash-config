@@ -49,6 +49,8 @@ dns:
     - '+.msftncsi.com'
     - '+.tsinghua.edu.cn'
     - '+.qq.com'
+    - '+.huggingface.co'
+    - '+.hf.co'
     # 跳过 Fake IP，让下方 DNS 策略对广告域名返回 NXDOMAIN。
     - 'rule-set:anti-ad'
   default-nameserver:
